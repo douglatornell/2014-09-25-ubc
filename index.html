@@ -1,42 +1,20 @@
 ---
 layout: bootcamp
 root: .
-venue: Euphoric State University
-address: 123 College Street, Euphoria
-country: United-States
-humandate: Feb 17-18, 2020
-humantime: 9:00 am - 4:30 pm
-startdate: 2020-06-17
-enddate: 2020-06-18
-latlng: 41.7901128,-87.6007318
+venue: University of British Columbia
+address: Earth, Ocean and Atmospheric Sciences, ESB-5108
+country: Canada
+humandate: Sep 25-26, 2014
+humantime: 9:00 - 4:00 Thu, 9:00 - 4:30 Fri
+startdate: 2014-09-25
+enddate: 2014-08-26
+latlng: 49.263,-123.252
 registration: restricted
-instructor: ["Grace Hopper", "Alan Turing"]
-helper: ["John von Neumann"]
-contact: admin@software-carpentry.org
+host: Susan Allen
+contact: sallen@eos.ubc.ca
+instructor: ["Doug Latornell", "Susan Allen"]
+helper: ["Jordan Aaron", "Karina Ramos Musalem", "Drew Snauffer", "Nancy Soontiens", "Kathi Unglert", "Kang Wang"]
 ---
-<!--
-    Edit the values in the parameter block above to be appropriate for your bootcamp.
-    Please use three-letter month names for the 'humandate' field.
--->
-
-<!-- Remove the block below. -->
-<div align="center">
-  <p><strong><em>
-      This page is a template for bootcamp home pages.
-      <br/>
-      Please see
-      <a href="//github.com/swcarpentry/bc">github.com/swcarpentry/bc</a>
-      for instructions on how to create
-      a repository for your bootcamp.
-  </em></strong></p>
-</div>
-
-<!--
-    This block includes the Eventbrite registration widget if 'eventbrite' has been set in the header.
--->
-{% if page.eventbrite %}
-<iframe src="//www.eventbrite.com/tickets-external?eid={{page.eventbrite}}&ref=etckt" frameborder="0" width="100%" scrolling="auto"></iframe>
-{% endif %}
 
 <h2>General Information</h2>
 
@@ -50,7 +28,13 @@ contact: admin@software-carpentry.org
   and to apply what they have learned to their own research problems.
 </p>
 
-<!-- This block displays the instructors' names if they are available. -->
+{% if page.host %}
+<p>
+  <strong>Host:</strong>
+  {{page.host | join: ', ' %}}
+</p>
+{% endif %}
+
 {% if page.instructor %}
 <p>
   <strong>Instructors:</strong>
@@ -58,7 +42,6 @@ contact: admin@software-carpentry.org
 </p>
 {% endif %}
 
-<!-- This block displays the helpers' names if they are available. -->
 {% if page.helper %}
 <p>
   <strong>Helpers:</strong>
@@ -66,27 +49,19 @@ contact: admin@software-carpentry.org
 </p>
 {% endif %}
 
-<!--
-    Modify this block to reflect the target audience for your bootcamp.
-    In particular, if it is only open to people from a particular institution,
-    or if specialized prerequisite knowledge is required, please mention that.
--->
 <p>
   <strong>Who:</strong>
-  The course is aimed at graduate students and other researchers.
+  The course is aimed at graduate students and other scientists
+  who are familiar with basic programming concepts (like loops,
+  conditionals, arrays, and functions) but need help to translate this
+  knowledge into practical tools to help them work more
+  productively.
 </p>
 
-<!--
-    This block displays the address and links to a map showing directions.
--->
 {% if page.latlng %}
 <p>
   <strong>Where:</strong>
   {{ page.address }}.
-  Get directions with
-  <a href="//www.openstreetmap.org/?mlat={{ page.latlng | replace:',','&mlon=' }}&zoom=16">OpenStreetMap</a>
-  or
-  <a href="//maps.google.com/maps?q={{ page.latlng }}">Google Maps</a>.
 </p>
 {% endif %}
 
@@ -99,10 +74,6 @@ contact: admin@software-carpentry.org
   (listed below).
 </p>
 
-<!--
-    This block automatically inserts a contact email address if one has been specified for the page.
-    If one hasn't, this block inserts the generic contact address for Software Carpentry.
--->
 <p>
   <strong>Contact</strong>:
   Please mail
@@ -114,7 +85,24 @@ contact: admin@software-carpentry.org
   for more information.
 </p>
 
-<hr/>
+<p>
+  <strong>Etherpad:</strong>
+  <a href="https://etherpad.mozilla.org/tDiQKEsobS">etherpad.mozilla.org/tDiQKEsobS</a>
+</p>
+
+<hr>
+
+<h2>Coffee and Food</h2>
+
+<div class="row-fluid">
+  <div class="span12">
+    <p>
+      Coffee, tea, and snacks will be provided at morning and afternoon breaks during the bootcamp.
+      Lunch will not be provided, but your are welcome to bring your lunch to eat in the lounge area outside ESB-5108.
+      Magma at the south end of the ground floor of ESB is one option for those who wish to buy lunch.
+    </p>
+  </div>
+</div>
 
 <!--
     Edit this block to show the schedule for your bootcamp.
@@ -123,24 +111,37 @@ contact: admin@software-carpentry.org
 
 <div class="row-fluid">
   <div class="span6">
-    <h3>Day 1</h3>
+    <h3>Thu 25-Sep-2014</h3>
     <table class="table table-striped">
-      <tr> <td>09:00</td> <td>Automating tasks with the Unix shell</td> </tr>
-      <tr> <td><em>10:30</em></td> <td><em>Coffee break</em></td> </tr>
-      <tr> <td>12:00</td> <td>Lunch break</td> </tr>
-      <tr> <td>13:00</td> <td>Building programs with Python</td> </tr>
-      <tr> <td><em>14:30</em></td> <td><em>Coffee break</em></td> </tr>
-      <tr> <td>16:00</td> <td>Wrap-up</td> </tr>
+      <tr> <td>09:00</td> <td>Introduction</td> </tr>
+      <tr> <td>09:20</td> <td>Automating tasks with the Unix shell</td> </tr>
+      <tr> <td>10:30</td> <td>Break</td> </tr>
+      <tr> <td>12:00</td> <td>Lunch</td> </tr>
+      <tr> <td>13:00</td> <td>Version control with Mercurial</td> </tr>
+      <tr> <td>14:30</td> <td>Break</td> </tr>
+      <tr> <td>15:45</td> <td>Wrap-up</td> </tr>
+      <tr>
+        <td>16:00</td>
+        <td>
+          EOAS Department Colloquim
+          <br>
+          (for those interested - ESB 5104/5106)
+          <br>
+          Dorrit Jacob, Macquarie University
+          <br>
+          <em>How to build a carbonate shell - insights from the submicron scale</em>
+          </td>
+      </tr>
     </table>
   </div>
   <div class="span6">
-    <h3>Day 2</h3>
+    <h3>Fri 26-Sep-2014</h3>
     <table class="table table-striped">
-      <tr> <td>09:00</td> <td>Version control with Git</td> </tr>
-      <tr> <td><em>10:30</em></td> <td><em>Coffee break</em></td> </tr>
-      <tr> <td>12:00</td> <td>Lunch break</td> </tr>
-      <tr> <td>13:00</td> <td>Managing data with SQL</td> </tr>
-      <tr> <td><em>14:30</em></td> <td><em>Coffee break</em></td> </tr>
+      <tr> <td>09:00</td> <td>Building programs with Python</td> </tr>
+      <tr> <td>10:30</td> <td>Break</td> </tr>
+      <tr> <td>12:00</td> <td>Lunch</td> </tr>
+      <tr> <td>13:00</td> <td>Data Exploration with Python</td> </tr>
+      <tr> <td>14:30</td> <td>Break</td> </tr>
       <tr> <td>16:00</td> <td>Wrap-up</td> </tr>
     </table>
   </div>
@@ -167,22 +168,6 @@ contact: admin@software-carpentry.org
     </ul>
   </div>
   <div class="span6">
-    <h3>Programming in Python</h3>
-    <ul>
-      <li>Using libraries</li>
-      <li>Working with arrays</li>
-      <li>Reading and plotting data</li>
-      <li>Creating and using functions</li>
-      <li>Loops and conditionals: <code>for</code>, <code>if</code>, <code>else</code>, ...</li>
-      <li>Defensive programming</li>
-      <li>Using Python from the command line</li>
-      <li><a href="novice/ref/03-python.html">Reference...</a></li>
-    </ul>
-  </div>
-</div>
-
-<div class="row-fluid">
-  <div class="span6">
     <h3>Version Control with Git</h3>
     <ul>
       <li>Creating a repository</li>
@@ -196,18 +181,26 @@ contact: admin@software-carpentry.org
       <li><a href="novice/ref/02-git.html">Reference...</a></li>
     </ul>
   </div>
+</div>
+
+<div class="row-fluid">
   <div class="span6">
-    <h3>Managing Data with SQL</h3>
+    <h3>Programming in Python</h3>
     <ul>
-      <li>Reading and sorting data</li>
-      <li>Filtering with <code>where</code></li>
-      <li>Calculating new values on the fly</li>
-      <li>Handling missing values</li>
-      <li>Combining values using aggregation</li>
-      <li>Combining information from multiple tables using <code>join</code></li>
-      <li>Creating, modifying, and deleting data</li>
-      <li>Programming with databases</li>
-      <li><a href="novice/ref/04-sql.html">Reference...</a></li>
+      <li>Using libraries</li>
+      <li>Working with arrays</li>
+      <li>Reading and plotting data</li>
+      <li>Creating and using functions</li>
+      <li>Loops and conditionals: <code>for</code>, <code>if</code>, <code>else</code>, ...</li>
+      <li>Defensive programming</li>
+      <li>Using Python from the command line</li>
+      <li><a href="novice/ref/03-python.html">Reference...</a></li>
+    </ul>
+  </div>
+  <div class="span6">
+    <h3>Data Exploration with Python</h3>
+    <ul>
+      <li>TODO</li>
     </ul>
   </div>
 </div>
@@ -222,11 +215,13 @@ contact: admin@software-carpentry.org
 <h2>Setup</h2>
 
 <p>
-  To participate in a Software Carpentry bootcamp, 
+  To participate in a Software Carpentry bootcamp,
   you will need working copies of the software described below.
   Please make sure to install everything
   (or at least to download the installers)
   <em>before</em> the start of your bootcamp.
 </p>
 
-{% include setup.html %}
+TODO
+
+<!-- {% include setup.html %} -->
