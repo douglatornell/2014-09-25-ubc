@@ -1,0 +1,136 @@
+\documentclass[xcolor=dvipsnames]{beamer}
+% Class options include: notes, notesonly, handout, trans,
+%                        hidesubsections, shadesubsections,
+%                        inrow, blue, red, grey, brown
+
+% Theme for beamer presentation.
+\usetheme{Susan}
+\usepackage{graphics}
+\usepackage{multicol}
+\usepackage{url}
+
+% Other themes include: beamerthemebars, beamerthemelined, 
+%                       beamerthemetree, beamerthemetreebars  
+
+
+\section*{Shell}
+
+\begin{document}
+
+\begin{frame}
+\begin{center}{\Huge Shell}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Introduction}
+Learning Goals
+\begin{enumerate}
+
+ \item   Explain how the shell relates to the keyboard, the screen, the operating system, and users' programs.
+ \item   Explain when and why command-line interfaces should be used instead of graphical interfaces.
+
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Files and Directories}
+%Learning Goals
+\begin{enumerate}
+\item    Explain the similarities and differences between a file and a directory.
+\item    Translate an absolute path into a relative path and vice versa.
+\item    Construct absolute and relative paths that identify specific files and directories.
+\item    Explain the steps in the shell's read-run-print cycle.
+\item    Identify actual command, flags, and filenames in command-line call.
+\item    Demonstrate the use of tab completion, and explain its advantages.
+\end{enumerate}
+
+\begin{multicols}{2}
+\begin{itemize}
+\item whoami
+\item pwd
+\item /
+\item ls
+\item ls -F
+\item ls -F data
+\item ls -F /data
+\item cd data
+\item cd ..
+\item ls -F -a
+\item ls north-pacific-gyre/2012-07-03
+\item ls no tab
+\end{itemize}
+\end{multicols}
+\end{frame}
+
+\begin{frame}
+\frametitle{Creating Things}
+\begin{enumerate}
+\item    Create a directory hierarchy that matches a given diagram.
+\item    Create files in that hierarchy using an editor or by copying and renaming existing files.
+\item    Display the contents of a directory using the command line.
+\item    Delete specified files and/or directories.
+\end{enumerate}
+\begin{multicols}{2}
+\begin{itemize}
+\item mkdir thesis
+\item cd thesis
+\item nano draft.txt
+\item rm draft.txt
+\item rm thesis
+\item rmdir thesis
+\item rm -r thesis
+\item mv thesis/draft.txt thesis/quotes.txt
+\item mv thesis/quotes.txt .
+\item cp quotes.txt thesis/quotations.txt
+\end{itemize}
+\end{multicols}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Exercise}
+What command(s) could you run so that the commands below will produce the output shown? (and do it)
+\begin{verbatim}
+$ ls
+analyzed   raw
+$ ls analyzed
+fructose.dat    sucrose.dat
+\end{verbatim}
+\end{frame}
+
+\begin{frame}
+\frametitle{Pipes and Filters}
+\begin{enumerate}
+
+\item    Redirect a command's output to a file.
+\item    Process a file instead of keyboard input using redirection.
+\item    Construct command pipelines with two or more stages.
+\item    Explain what usually happens if a program or pipeline isn't given any input to process.
+\item    Explain Unix's "small pieces, loosely joined" philosophy.
+
+\end{enumerate}
+\begin{multicols}{2}
+\begin{itemize}
+\item cd molecules
+\item wc *.pdb
+\item *, ? 
+\item wc -l
+\item wc --help
+\item wc -l *.pdb $>$ lengths
+\item cat lengths
+\item sort lengths
+\item sort lengths $>$ sorted-lengths
+\item head -1 sorted-lengths
+\item sort lengths $|$ head -1
+\item cd north-pacific-gyre/2012-07-03
+\item wc -l *.txt 
+\item wc -l *.txt $|$ sort $|$ head -5
+\item ls *Z.txt
+\end{itemize}
+\end{multicols}
+\end{frame}
+
+
+\end{document}
+
