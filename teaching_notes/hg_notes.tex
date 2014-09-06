@@ -1,0 +1,122 @@
+\documentclass[xcolor=dvipsnames]{beamer}
+% Class options include: notes, notesonly, handout, trans,
+%                        hidesubsections, shadesubsections,
+%                        inrow, blue, red, grey, brown
+
+% Theme for beamer presentation.
+\usetheme{Susan}
+\usepackage{graphics}
+\usepackage{multicol}
+\usepackage{url}
+
+% Other themes include: beamerthemebars, beamerthemelined, 
+%                       beamerthemetree, beamerthemetreebars  
+
+
+\section*{Mercurial (hg)}
+
+\begin{document}
+
+\begin{frame}
+\begin{center}{\Huge Mercurial (hg)}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Introduction}
+Learning Goal
+\begin{enumerate}
+
+ \item   Explain when and why you should use version control
+
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\begin{columns}
+\column{0.6\textwidth}
+\resizebox{!}{\textheight}{\includegraphics{img/phd101212s.png}}
+\column{0.4\textwidth}
+"Piled Higher and Deeper" by Jorge Cham, http://www.phdcomics.com
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{A Better Kind of Backup - Part 1}
+%Learning Goals
+\begin{enumerate}
+\item Explain which initialization and configuration steps are required once per machine, and which are required once per repository.
+\item Add files to Mercurial's collection of tracked files.
+\item Go through the modify-commit cycle for single and multiple files and explain where information is stored before and after the commit.
+\item Identify and use Mercurial revision numbers and changeset identifiers.
+\item Compare files with previous version of themselves.
+\end{enumerate}
+
+\begin{multicols}{2}
+\begin{itemize}
+\item Mercurial.ini (windows)
+\item ~/.hgrc (Linux/Mac)
+\item mkdir planets
+\item cd planets
+\item hg init
+\item ls -a
+\item hg verify
+\item nano mars.txt
+\item hg status
+\item hg add mars.txt
+\item hg commit -m ``Starting...''
+\item hg log
+\item hg diff
+\end{itemize}
+\end{multicols}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Mercurial.ini for Windows}
+Create a new file called \%USERPROFILE\%\textbackslash Mercurial.ini (that's spelled \$USERPROFILE/Mercurial.ini if you are in gitbash)
+\begin{verbatim}
+[ui]
+username = Vlad Dracula <vlad@tran.sylvan.ia>
+editor = nano
+
+[extensions]
+color =
+
+[color]
+mode = win32
+\end{verbatim}
+\end{frame}
+
+\begin{frame}
+\frametitle{A Better Kind of Backup - Part 1}
+%Learning Goals
+\begin{enumerate}
+\item Explain which initialization and configuration steps are required once per machine, and which are required once per repository.
+\item Add files to Mercurial's collection of tracked files.
+\item Go through the modify-commit cycle for single and multiple files and explain where information is stored before and after the commit.
+\item Identify and use Mercurial revision numbers and changeset identifiers.
+\item Compare files with previous version of themselves.
+\end{enumerate}
+
+\begin{multicols}{2}
+\begin{itemize}
+\item Mercurial.ini (windows)
+\item ~/.hgrc (Linux/Mac)
+\item mkdir planets
+\item cd planets
+\item hg init
+\item ls -a
+\item hg verify
+\item nano mars.txt
+\item hg status
+\item hg add mars.txt
+\item hg commit -m ``Starting...''
+\item hg log
+\item hg diff
+\end{itemize}
+\end{multicols}
+\end{frame}
+
+
+\end{document}
+
