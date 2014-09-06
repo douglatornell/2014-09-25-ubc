@@ -22,3 +22,5 @@ so that they don't have to type the same things over and over again.
 7.  [Finding Things](06-find.html)
 
 </div>
+
+[Unix Shell Reference Guide](../ref/01-shell.html)

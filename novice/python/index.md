@@ -32,6 +32,8 @@ and to use that language *well*.
 6.  [Command-Line Programs](06-cmdline.html)
 </div>
 
+[Python Reference Guide](../ref/03-python.html)
+
 
 ###iPython Notebooks###
 <div class="toc" markdown="1">
