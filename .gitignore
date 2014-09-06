@@ -6,3 +6,12 @@ _site
 book.md
 */*/*_files/*/*/*.text
 */*/*_files/*/*/*.html
+
+teaching_notes/*.aux
+teaching_notes/*.log
+teaching_notes/*.nav
+teaching_notes/*.out
+teaching_notes/*.pdf
+teaching_notes/*.snm
+teaching_notes/*.toc
+teaching_notes/*.vrb
