@@ -41,7 +41,7 @@ Learning Goal
 \end{columns}
 \end{frame}
 
-\begin{frame}
+\begin{frame}[label=part1]
 \frametitle{A Better Kind of Backup - Part 1}
 %Learning Goals
 \begin{enumerate}
@@ -87,36 +87,48 @@ mode = win32
 \end{verbatim}
 \end{frame}
 
-\begin{frame}
-\frametitle{A Better Kind of Backup - Part 1}
-%Learning Goals
-\begin{enumerate}
-\item Explain which initialization and configuration steps are required once per machine, and which are required once per repository.
-\item Add files to Mercurial's collection of tracked files.
-\item Go through the modify-commit cycle for single and multiple files and explain where information is stored before and after the commit.
-\item Identify and use Mercurial revision numbers and changeset identifiers.
-\item Compare files with previous version of themselves.
-\end{enumerate}
+\againframe{part1}
 
+\begin{frame}[label=part2]
+\frametitle{A Better Kind of Backup - Part 2}
+\begin{enumerate}
+\setcounter{enumi}{4}
+\item Compare files with old versions of themselves.
+\item Restore old versions of files.
+\item Configure Mercurial to ignore specific files, and explain why it is sometimes useful to do so.
+\end{enumerate}
 \begin{multicols}{2}
 \begin{itemize}
-\item Mercurial.ini (windows)
-\item ~/.hgrc (Linux/Mac)
-\item mkdir planets
-\item cd planets
-\item hg init
-\item ls -a
-\item hg verify
-\item nano mars.txt
+\item hg diff --rev 1:2 mars.txt
+\item hg diff -r 0:2 mars.txt
+\item hg diff --change 1
+\item hg revert mars.txt
+\item hg revert --rev 0 mars.txt
 \item hg status
-\item hg add mars.txt
-\item hg commit -m ``Starting...''
-\item hg log
-\item hg diff
+\item mkdir results
+\item touch a.dat b.dat c.dat results/a.out results/b.out
+\item hg status
+\item nano .hgignore
+\item hg status --ignored
 \end{itemize}
 \end{multicols}
 \end{frame}
 
+\begin{frame}[fragile]
+\frametitle{.hgignore}
+\begin{verbatim}
+syntax: glob
+*.dat
+results/
+\end{verbatim}
+\end{frame}
+
+\againframe{part2}
+
+\begin{frame}
+\frametitle{Exercise}
+Create a new Mercurial repository on your computer called bio. Write a three-line biography for yourself in a file called me.txt, commit your changes, then modify one line and add a fourth and display the differences between its updated state and its original state.
+\end{frame}
 
 \end{document}
 
