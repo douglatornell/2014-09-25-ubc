@@ -2,7 +2,8 @@
 layout: lesson
 root: ../..
 title: Introducing Version Control
----<div class="objectives" markdown="1">
+---
+<div class="objectives" markdown="1">
 
 #### Objectives
 * Explain when and why you should use version control
