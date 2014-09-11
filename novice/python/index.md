@@ -27,7 +27,7 @@ and to use that language *well*.
 1.  [Analyzing Patient Data](01-numpy.html)
 2.  [Creating Functions](02-func.html)
 3.  [Analyzing Multiple Data Sets](03-loop.html)
-4.  [Making Choices](04-cond.html)
+4.  [Making Choices](04-simple_cond.html)
 5.  [Defensive Programming](05-defensive.html)
 6.  [Command-Line Programs](06-cmdline.html)
 </div>
@@ -40,7 +40,7 @@ and to use that language *well*.
 1.  [Analyzing Patient Data](http://nbviewer.ipython.org/github/douglatornell/2014-09-25-ubc/blob/gh-pages/novice/python/01-numpy.ipynb)
 2.  [Creating Functions](http://nbviewer.ipython.org/github/douglatornell/2014-09-25-ubc/blob/gh-pages/novice/python/02-func.ipynb)
 3.  [Analyzing Multiple Data Sets](http://nbviewer.ipython.org/github/douglatornell/2014-09-25-ubc/blob/gh-pages/novice/python/03-loop.ipynb)
-4.  [Making Choices](http://nbviewer.ipython.org/github/douglatornell/2014-09-25-ubc/blob/gh-pages/novice/python/04-cond.ipynb)
+4.  [Making Choices](http://nbviewer.ipython.org/github/douglatornell/2014-09-25-ubc/blob/gh-pages/novice/python/04-simple_cond.ipynb)
 5.  [Defensive Programming](http://nbviewer.ipython.org/github/douglatornell/2014-09-25-ubc/blob/gh-pages/novice/python/05-defensive.ipynb)
 6.  [Command-Line Programs](http://nbviewer.ipython.org/github/douglatornell/2014-09-25-ubc/blob/gh-pages/novice/python/06-cmdline.ipynb)
 </div>
