@@ -28,8 +28,10 @@ root: ../..
 
 <div class="in">
 <pre>import glob
+
 import numpy as np
 from matplotlib import pyplot
+
 %matplotlib inline</pre>
 </div>
 
@@ -55,7 +57,7 @@ from matplotlib import pyplot
 <pre>datalen = 40
 filenames = glob.glob(&#39;inflammation*.csv&#39;)
 nofiles = len(filenames)
-datamin = np.empty((nofiles,datalen))
+datamin = np.empty((nofiles, datalen))
 datamean = np.empty_like(datamin)
 datamax = np.empty_like(datamin)</pre>
 </div>
@@ -122,11 +124,11 @@ pyplot.plot(overallmax)
 for count in range(nofiles):
     for time in range(datalen):
         if datamax[count,time] - overallmax[time] == -1:
-            pyplot.plot(time,datamax[count,time],&#39;s&#39;)
+            pyplot.plot(time, datamax[count, time], &#39;s&#39;)
         elif datamax[count,time] &lt; overallmax[time]:
-            pyplot.plot(time,datamax[count,time],&#39;x&#39;)
+            pyplot.plot(time, datamax[count, time], &#39;x&#39;)
         else:
-            pyplot.plot(time,datamax[count,time],&#39;.&#39;)
+            pyplot.plot(time, datamax[count, time], &#39;.&#39;)
 </pre>
 </div>
 
@@ -183,8 +185,8 @@ else:
 
 
 <div class="in">
-<pre>def sherlock(filenames,datalen=40):
-    datamax = np.empty((len(filenames),datalen))
+<pre>def sherlock(filenames, datalen=40):
+    datamax = np.empty((len(filenames), datalen))
     count = 0
     for f in filenames:
         datamax[count] = analyze_stats(f)[1]
@@ -199,11 +201,11 @@ def plotclues(datamax):
     for count in range(size[0]):
         for time in range(size[1]):
             if datamax[count,time] - overallmax[time] == -1:
-                pyplot.plot(time,datamax[count,time],&#39;s&#39;)
+                pyplot.plot(time, datamax[count, time], &#39;s&#39;)
             elif datamax[count,time] &lt; overallmax[time]:
-                pyplot.plot(time,datamax[count,time],&#39;x&#39;)
+                pyplot.plot(time, datamax[count, time], &#39;x&#39;)
             else:
-                pyplot.plot(time,datamax[count,time],&#39;.&#39;)
+                pyplot.plot(time,datamax[count, time],&#39;.&#39;)
     pyplot.title(&#34;Overall Maximum and Deviations Away from It\n dots = same as overall mean\n squares = exactly 1 unit less&#34;)
     pyplot.xlabel(&#34;Time (days)&#34;)
     pyplot.ylabel(&#34;Inflammation (units)&#34;)</pre>
@@ -223,14 +225,4 @@ def plotclues(datamax):
 <pre>
 <img src="../../novice/python/04-simple_cond_files/novice/python/04-simple_cond_25_0.png">
 </pre>
-</div>
-
-
-<div class="in">
-<pre></pre>
-</div>
-
-
-<div class="in">
-<pre></pre>
 </div>
