@@ -157,35 +157,35 @@ Finally,
 the `head` and `tail` combination selects lines 81-100 from whatever file is being processed.
 
 > #### Spaces in Names
-> 
+>
 > Filename expansion in loops is another reason you should not use spaces in filenames.
 > Suppose our data files are named:
-> 
+>
 > ~~~
 > basilisk.dat
 > red dragon.dat
 > unicorn.dat
 > ~~~
-> 
+>
 > If we try to process them using:
-> 
+>
 > ~~~
 > for filename in *.dat
 > do
 >     head -100 $filename | tail -20
 > done
 > ~~~
-> 
+>
 > then the shell will expand `*.dat` to create:
-> 
+>
 > ~~~
 > basilisk.dat red dragon.dat unicorn.dat
 > ~~~
-> 
+>
 > With older versions of Bash,
 > or most other shells,
 > `filename` will then be assigned the following values in turn:
-> 
+>
 > ~~~
 > basilisk.dat
 > red
@@ -196,10 +196,10 @@ the `head` and `tail` combination selects lines 81-100 from whatever file is bei
 > That's a problem: `head` can't read files called `red` and `dragon.dat`
 > because they don't exist,
 > and won't be asked to read the file `red dragon.dat`.
-> 
+>
 > We can make our script a little bit more robust
 > by [quoting](../../gloss.html#shell-quoting) our use of the variable:
-> 
+>
 > ~~~
 > for filename in *.dat
 > do
@@ -238,26 +238,26 @@ mv unicorn.dat original-unicorn.dat
 {:class="in"}
 
 > #### Measure Twice, Run Once
-> 
+>
 > A loop is a way to do many things at once&mdash;or to make many mistakes at
 > once if it does the wrong thing. One way to check what a loop *would* do
 > is to echo the commands it would run instead of actually running them.
 > For example, we could write our file renaming loop like this:
-> 
+>
 > ~~~
 > for filename in *.dat
 > do
 >     echo mv $filename original-$filename
 > done
 > ~~~
-> 
+>
 > Instead of running `mv`, this loop runs `echo`, which prints out:
-> 
+>
 > ~~~
 > mv basilisk.dat original-basilisk.dat
 > mv unicorn.dat original-unicorn.dat
 > ~~~
-> 
+>
 > *without* actually running those commands. We can then use up-arrow to
 > redisplay the loop, back-arrow to get to the word `echo`, delete it, and
 > then press "enter" to run the loop with the actual `mv` commands. This
@@ -380,12 +380,12 @@ It looks good,
 so she decides to get some coffee and catch up on her reading.
 
 > #### Those Who Know History Can Choose to Repeat It
-> 
+>
 > Another way to repeat previous work is to use the `history` command to
 > get a list of the last few hundred commands that have been executed, and
 > then to use `!123` (where "123" is replaced by the command number) to
 > repeat one of those commands. For example, if Nelle types this:
-> 
+>
 > ~~~
 > $ history | tail -5
 >   456  ls -l NENE0*.txt
@@ -394,7 +394,7 @@ so she decides to get some coffee and catch up on her reading.
 >   459  ls -l NENE0*.txt
 >   460  history
 > ~~~
-> 
+>
 > then she can re-run `goostats` on `NENE01729B.txt` simply by typing
 > `!458`.
 
@@ -410,6 +410,10 @@ so she decides to get some coffee and catch up on her reading.
 *   Use `history` to display recent commands, and `!number` to repeat a command by number.
 
 </div>
+
+
+<div class="challenges" markdown="1">
+####Challenges
 
 <div class="challenge" markdown="1">
 Suppose that `ls` initially displays:
@@ -480,4 +484,5 @@ do
     $how -limit 0.01 NENE01729B.txt
 done
 ~~~
+</div>
 </div>

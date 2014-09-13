@@ -80,7 +80,7 @@ $ pwd
 {:class="out"}
 
 > #### Alphabet Soup
-> 
+>
 > If the command to find out who we are is `whoami`, the command to find
 > out where we are ought to be called `whereami`, so why is it `pwd`
 > instead? The usual answer is that in the early 1970s, when Unix was
@@ -171,7 +171,7 @@ the shell thinks we're trying to run a command called `ls-F`,
 which doesn't exist.
 
 > #### What's In A Name?
-> 
+>
 > You may have noticed that all of Vlad's files' names are "something dot
 > something". This is just a convention: we can call a file `mythesis` or
 > almost anything else we want. However, most people use two-part names
@@ -370,7 +370,7 @@ It may seem redundant to have a name for it,
 but we'll see some uses for it soon.
 
 > #### Orthogonality
-> 
+>
 > The special names `.` and `..` don't belong to `ls`;
 > they are interpreted the same way by every program.
 > For example,
@@ -469,10 +469,15 @@ and we will see it in many other tools as we go on.
 
 </div>
 
+
+<div class="challenges" markdown="1">
+####Challenges
+
 <img src="img/filesystem-challenge.svg" alt="Filesystem for Challenge Questions" />
 
 <div class="challenge" markdown="1">
 If `pwd` displays `/users/thing`, what will `ls ../backup` display?
+
 1.  `../backup: No such file or directory`
 2.  `2012-12-01 2013-01-08 2013-01-27`
 3.  `2012-12-01/ 2013-01-08/ 2013-01-27/`
@@ -496,6 +501,7 @@ pnas-sub/ pnas-final/ original/
 
 <div class="challenge" markdown="1">
 What does the command `cd` without a directory name do?
+
 1.  It has no effect.
 2.  It changes the working directory to `/`.
 3.  It changes the working directory to the user's home directory.
@@ -504,4 +510,5 @@ What does the command `cd` without a directory name do?
 
 <div class="challenge" markdown="1">
 What does the command `ls` do when used with the -s and -h arguments?
+</div>
 </div>

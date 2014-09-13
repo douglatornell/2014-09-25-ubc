@@ -55,12 +55,12 @@ $ wc *.pdb
 {:class="out"}
 
 > #### Wildcards
-> 
+>
 > `*` is a [wildcard](../../gloss.html#wildcard). It matches zero or more
 > characters, so `*.pdb` matches `ethane.pdb`, `propane.pdb`, and so on.
 > On the other hand, `p*.pdb` only matches `pentane.pdb` and
 > `propane.pdb`, because the 'p' at the front only matches itself.
-> 
+>
 > `?` is also a wildcard, but it only matches a single character. This
 > means that `p?.pdb` matches `pi.pdb` or `p5.pdb`, but not `propane.pdb`.
 > We can use any number of wildcards at a time: for example, `p*.p?*`
@@ -71,7 +71,7 @@ $ wc *.pdb
 > match no characters at all), but not `quality.practice` (doesn't start
 > with 'p') or `preferred.p` (there isn't at least one character after the
 > '.p').
-> 
+>
 > When the shell sees a wildcard, it expands the wildcard to create a
 > list of matching filenames *before* running the command that was
 > asked for.  This means that commands like `wc` and `ls` never see
@@ -288,7 +288,7 @@ You can *and should* write your programs this way
 so that you and other people can put those programs into pipes to multiply their power.
 
 > #### Redirecting Input
-> 
+>
 > As well as using `>` to redirect a program's output, we can use `<` to
 > redirect its input, i.e., to read from a file instead of from standard
 > input. For example, instead of writing `wc ammonia.pdb`, we could write
@@ -395,6 +395,10 @@ so this matches all the valid data files she has.
 *   The best way to use the shell is to use pipes to combine simple single-purpose programs (filters).
 
 </div>
+
+
+<div class="challenges" markdown="1">
+####Challenges
 
 <div class="challenge" markdown="1">
 If we run `sort` on this file:
@@ -515,4 +519,5 @@ bear
 What other command(s) could be added to this in a pipeline to find
 out what animals the file contains (without any duplicates in their
 names)?
+</div>
 </div>

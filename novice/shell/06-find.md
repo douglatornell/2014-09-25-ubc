@@ -444,6 +444,10 @@ about them."
 
 </div>
 
+
+<div class="challenges" markdown="1">
+####Challenges
+
 <div class="challenge" markdown="1">
 Write a short explanatory comment for the following shell script:
 
@@ -468,4 +472,5 @@ end in `ose.dat` (e.g., `sucrose.dat` or `maltose.dat`), but do
 3. `grep -v temp $(find /data -name '*ose.dat' -print)`
 
 4. None of the above.
+</div>
 </div>

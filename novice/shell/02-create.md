@@ -80,7 +80,7 @@ $ nano draft.txt
 {:class="in"}
 
 > #### Which Editor?
-> 
+>
 > When we say, "`nano` is a text editor," we really do mean "text": it can
 > only work with plain character data, not tables, images, or any other
 > human-friendly media. We use it in examples because almost anyone can
@@ -91,7 +91,7 @@ $ nano draft.txt
 > even by Unix standards), or a graphical editor such as
 > [Gedit](http://projects.gnome.org/gedit/). On Windows, you may wish to
 > use [Notepad++](http://notepad-plus-plus.org/).
-> 
+>
 > No matter what editor you use, you will need to know where it searches
 > for and saves files. If you start it from the shell, it will (probably)
 > use your current working directory as its default location. If you use
@@ -137,7 +137,7 @@ $ ls
 {:class="in"}
 
 > #### Deleting Is Forever
-> 
+>
 > Unix doesn't have a trash bin: when we delete files, they are unhooked
 > from the file system so that their storage space on disk can be
 > recycled. Tools for finding and recovering deleted files do exist, but
@@ -213,15 +213,15 @@ $ rmdir thesis
 {:class="in"}
 
 > #### With Great Power Comes Great Responsibility
-> 
+>
 > Removing the files in a directory just so that we can remove the
 > directory quickly becomes tedious. Instead, we can use `rm` with the
 > `-r` flag (which stands for "recursive"):
-> 
+>
 > ~~~
 > $ rm -r thesis
 > ~~~
-> 
+>
 > This removes everything in the directory, then the directory itself. If
 > the directory contains sub-directories, `rm -r` does the same thing to
 > them, and so on. It's very handy, but can do a lot of damage if used
@@ -350,7 +350,7 @@ thesis/quotations.txt
 {:class="err"}
 
 > #### Another Useful Abbreviation
-> 
+>
 > The shell interprets the character `~` (tilde) at the start of a path to
 > mean "the current user's home directory". For example, if Vlad's home
 > directory is `/home/vlad`, then `~/data` is equivalent to
@@ -365,6 +365,10 @@ thesis/quotations.txt
 *   Nano is a very simple text editor&mdash;please use something else for real work.
 
 </div>
+
+
+<div class="challenges" markdown="1">
+####Challenges
 
 <div class="challenge" markdown="1">
 What is the output of the closing `ls` command in the sequence shown below?
@@ -423,4 +427,5 @@ in alphabetical order at each level.
 The command `ls -t` lists things by time of last change,
 with most recently changed files or directories first.
 In what order does `ls -R -t` display things?
+</div>
 </div>

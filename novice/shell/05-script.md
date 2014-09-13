@@ -382,6 +382,10 @@ Of course, this introduces another tradeoff between flexibility and complexity.
 
 </div>
 
+
+<div class="challenges" markdown="1">
+####Challenges
+
 <div class="challenge" markdown="1">
 Leah has several hundred data files, each of which is formatted like this:
 
@@ -453,4 +457,5 @@ done
 echo $*.dat
 ~~~
 
+</div>
 </div>
