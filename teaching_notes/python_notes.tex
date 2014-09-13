@@ -51,6 +51,7 @@
 \begin{frame}
 \frametitle{Analyzing Patient Data Part 2}
 \begin{enumerate}
+\setcounter{enumi}{5}
 \item    Perform operations on arrays of data.    
 \item    Display simple graphs.  
 \end{enumerate}
@@ -77,4 +78,98 @@
 \frametitle{Exercise}
 Create a single plot showing 1) the mean for each day and 2) the mean + 1 standard deviation for each day and the 3) the mean - 1 standard deviation for each day.
 \end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Creating Functions Part 1}
+\begin{enumerate}
+\item    Define a function that takes parameters.
+\item    Return a value from a function.
+\item    Test and debug a function.
+\end{enumerate}
+\begin{itemize}
+\item 
+\begin{verbatim} 
+def fahr_to_kelvin(temp):
+     return ((temp - 32) * (5/9)) + 273.15
+\end{verbatim}
+\item from \_\_future\_\_ import division
+\item 
+\begin{verbatim}
+def kelvin_to_celsius(temp):
+    return temp - 273.15
+\end{verbatim}
+\item 
+\begin{verbatim}
+def fahr_to_celsius(temp):
+    temp_k = fahr_to_kelvin(temp)
+    result = kelvin_to_celsius(temp_k)
+    return result
+\end{verbatim}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Creating Functions Part 2}
+\begin{enumerate}
+\setcounter{enumi}{3}
+%\item    Explain what a call stack is, and trace changes to the call stack as functions are called.
+\item    Explain the scope of a variable and the idea of encapsulation.
+\end{enumerate}
+\resizebox{\textwidth}{!}{\includegraphics{img/python-call-stack-05.png}}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Creating Functions Part 3}
+\begin{enumerate}
+\setcounter{enumi}{2}
+\item    Test and debug a function.
+\item    Explain why we should divide programs into small, single-purpose functions.
+\end{enumerate}
+\begin{itemize}
+\item 
+\begin{verbatim} 
+def centre(data, desired):
+    return (data - data.mean()) + desired
+\end{verbatim}
+\item z = numpy.zeros((2,2))
+\item print centre(z, 3)
+\item print data.std() - centred.std()
+\item '''centre(data, desired): return a new array containing the original data centered around the desired value.'''
+\item help(centre)
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Exercise}
+Write a function called analyze that takes a filename as a parameter and displays the three graphs produced in the previous lesson, i.e., analyze('inflammation-01.csv') should produce the graphs already shown, while analyze('inflammation-02.csv') should produce corresponding graphs for the second data set. Be sure to give your function a docstring. Hint: a function can just ``do'' something.  It doesn't necessarily need to return anything.
+\end{frame}
+
+
+
+\begin{frame}[fragile]
+\frametitle{Creating Functions Part 4}
+\begin{enumerate}
+\setcounter{enumi}{5}
+\item    Set default values for function parameters.
+\end{enumerate}
+\begin{itemize}
+\item def center(data, desired = 0):
+\item
+\begin{verbatim}
+def display(a=1, b=2, c=3):
+    print 'a:', a, 'b:', b, 'c:', c
+
+print 'no parameters:'
+display()
+print 'one parameter:'
+display(55)
+print 'two parameters:'
+display(55, 66)
+\end{verbatim}
+\item help(numpy.loadtxt)
+\end{itemize}
+\end{frame}
+
+
 \end{document}
