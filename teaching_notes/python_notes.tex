@@ -1,0 +1,80 @@
+\documentclass[xcolor=dvipsnames]{beamer}
+% Class options include: notes, notesonly, handout, trans,
+%                        hidesubsections, shadesubsections,
+%                        inrow, blue, red, grey, brown
+
+% Theme for beamer presentation.
+\usetheme{Susan}
+\usepackage{graphics}
+\usepackage{multicol}
+\usepackage{url}
+
+% Other themes include: beamerthemebars, beamerthemelined, 
+%                       beamerthemetree, beamerthemetreebars  
+
+
+\section*{Programs with Python)}
+
+\begin{document}
+
+\begin{frame}
+\begin{center}{\Huge Building Programs with Python}
+\end{center}
+\end{frame}
+
+\begin{frame} 
+\frametitle{Analyzing Patient Data Part 1}
+\begin{enumerate}
+\item    Explain what a library is, and what libraries are used for.
+\item    Load a Python library and use the things it contains.
+\item    Read tabular data from a file into a program.
+\item    Assign values to variables.
+\item    Select individual values and subsections from data.
+\end{enumerate}
+
+\begin{multicols}{2}
+\begin{itemize}
+\item import numpy
+\item numpy.loadtxt(fname=  delimiter=)
+\item weight\_kg = 55
+\item print
+\item weight\_lb = 2.2 * weight\_kg
+\item type(data)
+\item data.shape
+\item data[0,0], data[0:1,0:1]
+\item data[0:10:2,1]
+\item data[:3,36:]
+\end{itemize}
+\end{multicols}
+\end{frame}
+
+\begin{frame}
+\frametitle{Analyzing Patient Data Part 2}
+\begin{enumerate}
+\item    Perform operations on arrays of data.    
+\item    Display simple graphs.  
+\end{enumerate}
+\begin{multicols}{2}
+\begin{itemize}
+\item data.mean()
+\item data.std()
+\item data.mean(axis=0)
+\item \%matplotlib inline
+\item from matplotlib import pyplot 
+\item pyplot.imshow(data)
+\item pyplot.show()
+\item pyplot.plot(ave\_inflammation)
+\item import matplotlib import pyplot as plt
+\item plt.subplot(1,3,1)
+\item plt.ylabel('average')
+\item plt.show()
+\end{itemize}
+\end{multicols}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Exercise}
+Create a single plot showing 1) the mean for each day and 2) the mean + 1 standard deviation for each day and the 3) the mean - 1 standard deviation for each day.
+\end{frame}
+\end{document}
