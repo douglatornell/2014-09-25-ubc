@@ -171,5 +171,105 @@ display(55, 66)
 \end{itemize}
 \end{frame}
 
+\begin{frame}[fragile]
+\frametitle{Analyzing Multiple Data Sets: Part 1}
+You should have a working function analyze.  If not, its at the top of
+\url{https://douglatornell.github.io/2014-09-25-ubc/novice/python/03-loop.html}
+\begin{enumerate}
+\item    Explain what a for loop does.
+\item    Correctly write for loops to repeat simple calculations.
+\end{enumerate}
+\begin{itemize}
+\item
+\begin{verbatim}
+def print_characters(element):
+    print element[0]
+    print element[1]
+    print element[2]
+\end{verbatim}
+\item print\_characters('tin')
+\item print\_characters('hg')
+\item 
+\begin{verbatim}
+def print_characters(element):
+    for char in element:
+        print char
+\end{verbatim}
+\end{itemize}
+\end{frame}
 
+\begin{frame}[fragile]
+\frametitle{Analyzing Multiple Data Sets: Part 2}
+\begin{enumerate}
+\setcounter{enumi}{2}
+\item    Trace changes to a loop variable as the loop runs.
+\item    Trace changes to other variables as they are updated by a for loop.
+\end{enumerate}
+\begin{itemize}
+\item
+\begin{verbatim}
+length = 0
+for vowel in 'aeiou':
+    length = length + 1
+print 'There are', length, 'vowels'
+\end{verbatim}
+\item
+\begin{verbatim}
+letter = 'z'
+for letter in 'abc':
+    print letter
+print 'after the loop, letter is', letter
+\end{verbatim}
+\item len('aeiou')
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Analyzing Multiple Data Sets: Part 3}
+\begin{enumerate}
+\setcounter{enumi}{4}
+\item     Explain what a list is.
+\item    Create and index lists of simple values.
+\end{enumerate}
+\begin{multicols}{2}
+\begin{itemize}
+\item odds = [1,3,5,7]
+\item odds[0], odds[-1]
+\item for number in odds:
+\item names = ['Newton', 'Darwig', 'Turing'] 
+\item names[1] = 'Darwin'
+\item name = 'Darwig'
+\item name[5] = 'n'
+\item odds.append[9]
+\item del odds[0]
+\item odds.reverse()
+\end{itemize}
+\end{multicols}
+\end{frame}
+
+\begin{frame}
+\frametitle{Exercise}
+Write a function called total that calculates the sum of the values in a list. (Python has a built-in function called sum that does this for you. Please don't use it for this exercise.)
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Analyzing Multiple Data Sets: Part 4}
+\begin{enumerate}
+\setcounter{enumi}{6}
+\item     Use a library function to get a list of filenames that match a simple wildcard pattern.
+\item    Use a for loop to process multiple files.
+\end{enumerate}
+\begin{itemize}
+\item import glob
+\item print glob.glob('*.ipynb')
+\item
+\begin{verbatim}
+filenames = glob.glob('*.csv')
+filenames = filenames[0:3]
+for f in filenames:
+    print f
+    analyze(f)
+\end{verbatim}
+\end{itemize}
+\end{frame}
 \end{document}
