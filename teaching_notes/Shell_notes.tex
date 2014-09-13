@@ -9,8 +9,8 @@
 \usepackage{multicol}
 \usepackage{url}
 
-% Other themes include: beamerthemebars, beamerthemelined, 
-%                       beamerthemetree, beamerthemetreebars  
+% Other themes include: beamerthemebars, beamerthemelined,
+%                       beamerthemetree, beamerthemetreebars
 
 
 \section*{Shell}
@@ -95,7 +95,7 @@ What command(s) could you run so that the commands below will produce the output
 $ ls
 analyzed   raw
 $ ls analyzed
-fructose.dat    sucrose.dat
+fructose.dat    glucose.dat    sucrose.dat
 \end{verbatim}
 \end{frame}
 
@@ -114,7 +114,7 @@ fructose.dat    sucrose.dat
 \begin{itemize}
 \item cd molecules
 \item wc *.pdb
-\item *, ? 
+\item *, ?
 \item wc -l
 \item wc --help
 \item wc -l *.pdb $>$ lengths
@@ -124,7 +124,7 @@ fructose.dat    sucrose.dat
 \item head -1 sorted-lengths
 \item sort lengths $|$ head -1
 \item cd north-pacific-gyre/2012-07-03
-\item wc -l *.txt 
+\item wc -l *.txt
 \item wc -l *.txt $|$ sort $|$ head -5
 \item ls *Z.txt
 \end{itemize}
@@ -132,5 +132,61 @@ fructose.dat    sucrose.dat
 \end{frame}
 
 
-\end{document}
+\begin{frame}
+\frametitle{Loops - Part 1}
+\begin{enumerate}
+  \item Write a loop that applies one or more commands separately to each file in a set of files.
+  \item Trace the values taken on by a loop variable during execution of the loop.
+  \item Explain the difference between a variable's name and its value.
+  \item Explain why spaces and some punctuation characters shouldn't be used in files' names.
+\end{enumerate}
+\begin{multicols}{2}
+\begin{itemize}
+  \item for ... do ... done
+  \item varname, \$varname
+  \item echo
+  \item "\$varname"
+\end{itemize}
+\end{multicols}
+\end{frame}
 
+
+\begin{frame}
+\frametitle{Loops - Part 2}
+\begin{enumerate}
+  \item Demonstrate how to see what commands have recently been executed.
+  \item Re-run recently executed commands without retyping them.
+\end{enumerate}
+\begin{multicols}{2}
+\begin{itemize}
+  \item ls *[AB].txt
+  \item Up-Arrow
+  \item history
+  \item Ctrl-A, Ctrl-E
+  \item Ctrl-R
+  \item Ctrl-C
+\end{itemize}
+\end{multicols}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Exercise}
+In your {\tt analyzed} directorydirectory, what is the effect of this loop?
+
+\begin{verbatim}
+for sugar in *.dat
+do
+    echo $sugar
+    cat $sugar > xylose.dat
+done
+\end{verbatim}
+\begin{enumerate}
+\item Prints {\tt fructose.dat}, {\tt glucose}, and {\tt sucrose}, and copies {\tt sucrose} to create {\tt xylose}.
+\item Prints {\tt fructose}, {\tt glucose}, and {\tt sucrose}, and concatenates all three files to create {\tt xylose}.
+\item Prints {\tt fructose}, {\tt glucose}, {\tt sucrose}, and {\tt xylose}, and copies {\tt sucrose} to create {\tt xylose}.
+\item None of the above.
+\end{enumerate}
+\end{frame}
+
+\end{document}
