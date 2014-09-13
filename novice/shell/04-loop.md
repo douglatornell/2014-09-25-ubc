@@ -481,7 +481,7 @@ Describe in words what the following loop does.
 ~~~
 for how in frog11 prcb redig
 do
-    $how -limit 0.01 NENE01729B.txt
+    $how NENE01729B.txt NENE01736A.txt
 done
 ~~~
 </div>
