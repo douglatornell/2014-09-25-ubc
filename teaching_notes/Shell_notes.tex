@@ -172,7 +172,7 @@ fructose.dat    glucose.dat    sucrose.dat
 
 \begin{frame}[fragile]
 \frametitle{Exercise}
-In your {\tt analyzed} directorydirectory, what is the effect of this loop?
+In your {\tt analyzed} directory, what is the effect of this loop?
 
 \begin{verbatim}
 for sugar in *.dat
@@ -182,11 +182,49 @@ do
 done
 \end{verbatim}
 \begin{enumerate}
-\item Prints {\tt fructose.dat}, {\tt glucose}, and {\tt sucrose}, and copies {\tt sucrose} to create {\tt xylose}.
-\item Prints {\tt fructose}, {\tt glucose}, and {\tt sucrose}, and concatenates all three files to create {\tt xylose}.
-\item Prints {\tt fructose}, {\tt glucose}, {\tt sucrose}, and {\tt xylose}, and copies {\tt sucrose} to create {\tt xylose}.
-\item None of the above.
+  \item Prints {\tt fructose.dat}, {\tt glucose}, and {\tt sucrose}, and copies {\tt sucrose} to create {\tt xylose}.
+  \item Prints {\tt fructose}, {\tt glucose}, and {\tt sucrose}, and concatenates all three files to create {\tt xylose}.
+  \item Prints {\tt fructose}, {\tt glucose}, {\tt sucrose}, and {\tt xylose}, and copies {\tt sucrose} to create {\tt xylose}.
+  \item None of the above.
 \end{enumerate}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Shell Scripts}
+\begin{enumerate}
+\item Write a shell script that runs a command or series of commands for a fixed set of files.
+\item Run a shell script from the command line.
+\item Write a shell script that operates on a set of files defined by the user on the command line.
+\item Create pipelines that include user-written shell scripts.
+\end{enumerate}
+\begin{multicols}{2}
+\begin{itemize}
+  \item bash myscript.sh
+  \item \$1, \$2, ... \$n, \$*
+  \item \# comment
+  \item history $|$ tail -4 $>$ script.sh
+\end{itemize}
+\end{multicols}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Exercise}
+Write a shell script called {\tt longest.sh} that takes the name of a directory and a filename extension as its parameters,
+and prints out the number of lines,
+directory,
+and name of the file with the most lines in that directory with that extension.
+For example:
+
+\begin{verbatim}
+$ bash longest.sh /tmp/data pdb
+\end{verbatim}
+
+would print the number of lines,
+directory,
+and name of the {\tt .pdb} file in {\tt /tmp/data} that has
+the most lines.
 \end{frame}
 
 \end{document}
