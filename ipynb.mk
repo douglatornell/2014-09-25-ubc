@@ -26,8 +26,9 @@ IPYNB_TPL = _templates/ipynb.tpl
 # other locations.
 IPYNB_SRC = \
 	$(wildcard novice/python/??-*.ipynb) \
-	$(wildcard novice/sql/??-*.ipynb) \
-	$(wildcard intermediate/python/??-*.ipynb) \
+	$(wildcard novice/python-eoas/??-*.ipynb) \
+    $(wildcard novice/sql/??-*.ipynb) \
+    $(wildcard intermediate/python/??-*.ipynb) \
 	$(wildcard intermediate/doit/??-*.ipynb)
 
 # Notebooks converted to Markdown.
