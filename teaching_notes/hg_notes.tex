@@ -131,7 +131,7 @@ Create a new Mercurial repository on your computer called bio. Write a three-lin
 \end{frame}
 
 
-\begin{frame}
+\begin{frame}[label=Collaborating]
 \frametitle{Collaborating}
 \begin{enumerate}
   \item Explain what remote repositories are and why they are useful.
@@ -149,6 +149,23 @@ Create a new Mercurial repository on your computer called bio. Write a three-lin
 \end{itemize}
 \end{multicols}
 \end{frame}
+
+
+\begin{frame}[fragile]
+We're going to explore collaborating via a remote repository clone on Bitbucket by pretending that we are going back and forth between our home and work computers.
+We'll simulate that by creating a directory for each location and moving our {\tt planets/} repository into the work computer directory.
+\begin{verbatim}
+$ cd
+$ cd Desktop/swc/
+$ mkdir home-pc work-pc
+$ mv planets/ work-pc/
+\end{verbatim}
+These could just as easily be directories on our own and our supervisor's computer,
+or on the computers of a group of collaborators spread around the world.
+\end{frame}
+
+
+\againframe{Collaborating}
 
 \end{document}
 
