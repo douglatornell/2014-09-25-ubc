@@ -116,7 +116,8 @@ fructose.dat    glucose.dat    sucrose.dat
 \end{verbatim}
 \end{frame}
 
-\begin{frame}
+
+\begin{frame}[label=PipesAndFilters]
 \frametitle{Pipes and Filters}
 \begin{enumerate}
 
@@ -147,6 +148,28 @@ fructose.dat    glucose.dat    sucrose.dat
 \end{itemize}
 \end{multicols}
 \end{frame}
+
+
+\begin{frame}[fragile]
+We're going to start working with Nelle Nemo's Great Pacific Garbage Patch files,
+so everybody needs a copy of her directories and files so that you can pretend that you are Nelle.
+
+Use Mercurial to grab the files from Bitbucket and put them in a {\tt nnemo} directory in your SWC workspace:
+{\footnotesize
+\begin{verbatim}
+$ cd
+$ cd Desktop/swc
+$ hg clone https://bitbucket.org/douglatornell/swc-nelle-files nnemo
+\end{verbatim}
+}
+{\bf TODO}: Confirm URL and add command to Etherpad
+
+You can copy and paste the {\tt hg clone} command from the Etherpad.
+We'll learn what it means in the Version Control with Mercurial section later today.
+\end{frame}
+
+
+\againframe{PipesAndFilters}
 
 
 \begin{frame}
