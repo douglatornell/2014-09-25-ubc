@@ -9,6 +9,10 @@
 \usepackage{multicol}
 \usepackage{url}
 
+% double-hyphen command to make -- render as separate dashes instead
+% of as an m-dash
+\renewcommand{\dh}{{-}{-}}
+
 \section*{Mercurial (hg)}
 
 \begin{document}
@@ -95,17 +99,17 @@ mode = win32
 \end{enumerate}
 \begin{multicols}{2}
 \begin{itemize}
-\item hg diff --rev 1:2 mars.txt
+\item hg diff \dh rev 1:2 mars.txt
 \item hg diff -r 0:2 mars.txt
-\item hg diff --change 1
+\item hg diff \dh change 1
 \item hg revert mars.txt
-\item hg revert --rev 0 mars.txt
+\item hg revert \dh rev 0 mars.txt
 \item hg status
 \item mkdir results
 \item touch a.dat b.dat c.dat results/a.out results/b.out
 \item hg status
 \item nano .hgignore
-\item hg status --ignored
+\item hg status \dh ignored
 \end{itemize}
 \end{multicols}
 \end{frame}
@@ -140,7 +144,7 @@ Create a new Mercurial repository on your computer called bio. Write a three-lin
   \item hg push
   \item hg pull
   \item hg clone
-  \item hg log --graph
+  \item hg log \dh graph
   \item hg update
 \end{itemize}
 \end{multicols}
