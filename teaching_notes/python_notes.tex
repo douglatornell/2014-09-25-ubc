@@ -5,12 +5,10 @@
 
 % Theme for beamer presentation.
 \usetheme{Susan}
+
 \usepackage{graphics}
 \usepackage{multicol}
 \usepackage{url}
-
-% Other themes include: beamerthemebars, beamerthemelined, 
-%                       beamerthemetree, beamerthemetreebars  
 
 
 \section*{Programs with Python)}
@@ -22,7 +20,24 @@
 \end{center}
 \end{frame}
 
-\begin{frame} 
+
+\begin{frame}[fragile]
+For our Python introduction we're going to pretend to be a researcher named Harold Bridge (user id {\tt hbridge}) who is studying inflammation in patients who have been given a new treatment for arthritis.
+
+Use Mercurial to grab the files from Bitbucket and put them in an {\tt hbridge} directory in your SWC workspace:
+{\footnotesize
+\begin{verbatim}
+$ cd
+$ cd Desktop/swc
+$ hg clone https://bitbucket.org/douglatornell/swc-hbridge-files hbridge
+\end{verbatim}
+}
+
+You can copy and paste the {\tt hg clone} command from the Etherpad.
+\end{frame}
+
+
+\begin{frame}
 \frametitle{Analyzing Patient Data Part 1}
 \begin{enumerate}
 \item    Explain what a library is, and what libraries are used for.
@@ -52,8 +67,8 @@
 \frametitle{Analyzing Patient Data Part 2}
 \begin{enumerate}
 \setcounter{enumi}{5}
-\item    Perform operations on arrays of data.    
-\item    Display simple graphs.  
+\item    Perform operations on arrays of data.
+\item    Display simple graphs.
 \end{enumerate}
 \begin{multicols}{2}
 \begin{itemize}
@@ -61,7 +76,7 @@
 \item data.std()
 \item data.mean(axis=0)
 \item \%matplotlib inline
-\item from matplotlib import pyplot 
+\item from matplotlib import pyplot
 \item pyplot.imshow(data)
 \item pyplot.show()
 \item pyplot.plot(ave\_inflammation)
@@ -87,18 +102,18 @@ Create a single plot showing 1) the mean for each day and 2) the mean + 1 standa
 \item    Test and debug a function.
 \end{enumerate}
 \begin{itemize}
-\item 
-\begin{verbatim} 
+\item
+\begin{verbatim}
 def fahr_to_kelvin(temp):
      return ((temp - 32) * (5/9)) + 273.15
 \end{verbatim}
 \item from \_\_future\_\_ import division
-\item 
+\item
 \begin{verbatim}
 def kelvin_to_celsius(temp):
     return temp - 273.15
 \end{verbatim}
-\item 
+\item
 \begin{verbatim}
 def fahr_to_celsius(temp):
     temp_k = fahr_to_kelvin(temp)
@@ -127,8 +142,8 @@ def fahr_to_celsius(temp):
 \item    Explain why we should divide programs into small, single-purpose functions.
 \end{enumerate}
 \begin{itemize}
-\item 
-\begin{verbatim} 
+\item
+\begin{verbatim}
 def centre(data, desired):
     return (data - data.mean()) + desired
 \end{verbatim}
@@ -189,7 +204,7 @@ def print_characters(element):
 \end{verbatim}
 \item print\_characters('tin')
 \item print\_characters('hg')
-\item 
+\item
 \begin{verbatim}
 def print_characters(element):
     for char in element:
@@ -236,7 +251,7 @@ print 'after the loop, letter is', letter
 \item odds = [1,3,5,7]
 \item odds[0], odds[-1]
 \item for number in odds:
-\item names = ['Newton', 'Darwig', 'Turing'] 
+\item names = ['Newton', 'Darwig', 'Turing']
 \item names[1] = 'Darwin'
 \item name = 'Darwig'
 \item name[5] = 'n'
