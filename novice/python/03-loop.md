@@ -172,7 +172,6 @@ print_characters(&#39;lead&#39;)</pre>
 <strong>for</strong> <em>variable</em> <strong>in</strong> <em>collection</em><strong>:</strong>
     <em>do things with variable</em>
 </pre>
-
 </div>
 
 
@@ -221,30 +220,20 @@ print &#39;after the loop, letter is&#39;, letter</pre>
 
 <div class="challenges">
 <h4 id="challenges">Challenges</h4>
-<ol>
-<li><p>Python has a built-in function called <code>range</code> that creates a list of numbers:
-<code>range(3)</code> produces <code>[0, 1, 2]</code>, <code>range(2, 5)</code> produces <code>[2, 3, 4]</code>, and <code>range(2, 10, 3)</code> produces <code>[2, 5, 8]</code>.
-Using <code>range</code>,
-write a function that prints the $N$ natural numbers:</p>
-<pre><code class="language-python">print_N(<span class="number">3</span>)
-<span class="number">1</span>
-<span class="number">2</span>
-<span class="number">3</span>
-</code></pre>
-</li>
+<ol style="list-style-type: decimal">
+<li><p>Python has a built-in function called <code>range</code> that creates a list of numbers: <code>range(3)</code> produces <code>[0, 1, 2]</code>, <code>range(2, 5)</code> produces <code>[2, 3, 4]</code>, and <code>range(2, 10, 3)</code> produces <code>[2, 5, 8]</code>. Using <code>range</code>, write a function that prints the <span class="math">\(N\)</span> natural numbers:</p>
+<pre class="sourceCode python"><code class="sourceCode python">print_N(<span class="dv">3</span>)
+<span class="dv">1</span>
+<span class="dv">2</span>
+<span class="dv">3</span></code></pre></li>
 <li><p>Exponentiation is built into Python:</p>
-<pre><code class="language-python"><span class="keyword">print</span> <span class="number">2</span>**<span class="number">4</span>
-<span class="number">16</span>
-</code></pre>
-<p>It also has a function called <code>pow</code> that calculates the same value.
-Write a function called <code>expo</code> that uses a loop to calculate the same result.</p>
-</li>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> <span class="dv">2</span>**<span class="dv">4</span>
+<span class="dv">16</span></code></pre>
+<p>It also has a function called <code>pow</code> that calculates the same value. Write a function called <code>expo</code> that uses a loop to calculate the same result.</p></li>
 <li><p>Write a function called <code>rev</code> that takes a string as input, and produces a new string with the characters in reverse order:</p>
-<pre><code class="language-python"><span class="keyword">print</span> rev(<span class="string">'Newton'</span>)
-notweN
-</code></pre>
-<p>As always, be sure to include a docstring.</p>
-</li>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> rev(<span class="st">&#39;Newton&#39;</span>)
+notweN</code></pre>
+<p>As always, be sure to include a docstring.</p></li>
 </ol>
 </div>
 
@@ -449,5 +438,5 @@ inflammation-03.csv
 <li>Use functions to make code easier to re-use and easier to understand.</li>
 <li>Use lists and arrays to store related values, and loops to repeat operations on them.</li>
 </ol>
-<p>We have one more big idea to introduce, and then we will be able to go back and create a heat map like the one we initially used to display our first data set.</p>
+<p>We have one more big idea to introduce, and then we will be able to get to the bottom of what's really going on with these data sets.</p>
 </div>
