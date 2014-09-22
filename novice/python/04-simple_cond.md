@@ -30,7 +30,7 @@ root: ../..
 <pre>import glob
 
 import numpy as np
-from matplotlib import pyplot
+from matplotlib import pyplot as plt
 
 %matplotlib inline</pre>
 </div>
@@ -49,7 +49,8 @@ from matplotlib import pyplot
 
 
 <div>
-<p>We will now set up the large arrays that we will store the statistics in. We use another method for creating numpy array: the empty function. Also available, zeros and ones.</p>
+<p>We will now set up the large arrays that we will store the statistics in. We use some other methods for creating numpy arrays: * <code>empty()</code> * <code>empty_like()</code></p>
+<p>Also available are: <code>zeros()</code>, <code>zeros_like</code>, <code>ones()</code>, and <code>ones_like()</code>.</p>
 </div>
 
 
@@ -64,8 +65,10 @@ datamax = np.empty_like(datamin)</pre>
 
 
 <div>
-<p>Similar to the previous lesson we interate over the files and calculate the statistics for all those files. However, we want to store the information, so we count the files and use that as an index into the file. Note that datamean[count] is actually a vector, one value for each time.</p>
-<p>Python (and most other languages in the C family) provides <a href="../../gloss.html#in-place-operator">in-place operators</a>. count += 1 add 1 to count.</p>
+<p>Similar to the previous lesson we interate over the files and calculate the statistics for all those files. However, we want to store the information, so we count the files and use that as an index into the file. Note that <code>datamean[count]</code> is actually a vector, one value for each time.</p>
+<p>Python (and most other languages in the C family) provides <a href="../../gloss.html#in-place-operator">in-place operators</a>, for example:</p>
+<pre class="sourceCode python"><code class="sourceCode python">count += <span class="dv">1</span></code></pre>
+<p>to add 1 to count.</p>
 </div>
 
 
@@ -78,13 +81,16 @@ for f in filenames:
 
 
 <div>
-<p>Plotting a heat map, like in the first lesson, of the maximum captures one statistic we think totally unrealistic for real data.</p>
+<p>Plotting a heat map, like in the first lesson, of the maximum values shows one statistic we is think totally unrealistic for real data.</p>
 </div>
 
 
 <div class="in">
-<pre>pyplot.imshow(datamax)
-pyplot.show()</pre>
+<pre>plt.imshow(datamax)
+plt.xlabel(&#39;Time&#39;)
+plt.ylabel(&#39;Dataset&#39;)
+plt.title(&#39;Max Values&#39;)
+plt.show()</pre>
 </div>
 
 <div class="out">
@@ -100,8 +106,11 @@ pyplot.show()</pre>
 
 
 <div class="in">
-<pre>pyplot.imshow(datamean)
-pyplot.show()</pre>
+<pre>plt.imshow(datamean)
+plt.xlabel(&#39;Time&#39;)
+plt.ylabel(&#39;Dataset&#39;)
+plt.title(&#39;Mean Values&#39;)
+plt.show()</pre>
 </div>
 
 <div class="out">
@@ -112,24 +121,32 @@ pyplot.show()</pre>
 
 
 <div>
-<p>So we will use line plots to show * 1) that the overall maximum is a simple straight line up and straight line back down with the same slope * 2) that almost ALL the time the maximum of a dataset is equal to the overall maximum at that time and * 3) those two maximum values that are not equal to the overall maximum are exactly one less than it</p>
-<p>To do this we will use a conditional, imbedded inside loops.</p>
+<p>So, we will use line plots to show:</p>
+<ol style="list-style-type: decimal">
+<li>that the overall maximum is a simple straight line up and straight line back down with the same slope,</li>
+<li>that almost ALL the time the maximum of a dataset is equal to the overall maximum at that time, and</li>
+<li>those two maximum values that are not equal to the overall maximum are exactly one less than it</li>
+</ol>
+<p>To do this we will use a conditional statement, imbedded inside loops.</p>
 </div>
 
 
 <div class="in">
 <pre>overallmax = datamax.max(0)
-pyplot.plot(overallmax)
+plt.plot(overallmax)
 
 for count in range(nofiles):
     for time in range(datalen):
         if datamax[count,time] - overallmax[time] == -1:
-            pyplot.plot(time, datamax[count, time], &#39;s&#39;)
+            plt.plot(time, datamax[count, time], &#39;s&#39;)
         elif datamax[count,time] &lt; overallmax[time]:
-            pyplot.plot(time, datamax[count, time], &#39;x&#39;)
+            plt.plot(time, datamax[count, time], &#39;x&#39;)
         else:
-            pyplot.plot(time, datamax[count, time], &#39;.&#39;)
-</pre>
+            plt.plot(time, datamax[count, time], &#39;.&#39;)
+
+plt.xlabel(&#39;Time&#39;)
+plt.ylabel(&#39;Max Value&#39;)
+plt.show()</pre>
 </div>
 
 <div class="out">
@@ -180,7 +197,7 @@ else:
 
 
 <div>
-<p>So lets put this all in function called Sherlock and a second function plotclues</p>
+<p>So, let's put this all in function called <code>sherlock()</code> and a second function <code>plot_clues()</code>:</p>
 </div>
 
 
@@ -191,29 +208,38 @@ else:
     for f in filenames:
         datamax[count] = analyze_stats(f)[1]
         count += 1
-    plotclues(datamax)
+    plot_clues(datamax)
 
-def plotclues(datamax):
+    
+def plot_clues(datamax):
     overallmax = datamax.max(0)
-    pyplot.plot(overallmax)
+    plt.plot(overallmax)
     size = datamax.shape
 
     for count in range(size[0]):
         for time in range(size[1]):
             if datamax[count,time] - overallmax[time] == -1:
-                pyplot.plot(time, datamax[count, time], &#39;s&#39;)
+                plt.plot(time, datamax[count, time], &#39;s&#39;)
             elif datamax[count,time] &lt; overallmax[time]:
-                pyplot.plot(time, datamax[count, time], &#39;x&#39;)
+                plt.plot(time, datamax[count, time], &#39;x&#39;)
             else:
-                pyplot.plot(time,datamax[count, time],&#39;.&#39;)
-    pyplot.title(&#34;Overall Maximum and Deviations Away from It\n dots = same as overall mean\n squares = exactly 1 unit less&#34;)
-    pyplot.xlabel(&#34;Time (days)&#34;)
-    pyplot.ylabel(&#34;Inflammation (units)&#34;)</pre>
+                plt.plot(time,datamax[count, time],&#39;.&#39;)
+    plt.title(
+        &#34;Overall Maximum and Deviations Away from It\n&#34;
+        &#34;dots = same as overall mean\n&#34;
+        &#34;squares = exactly 1 unit less&#34;)
+    plt.xlabel(&#34;Time (days)&#34;)
+    plt.ylabel(&#34;Inflammation (units)&#34;)</pre>
 </div>
 
 
 <div>
-<p>We have made a couple of modifications to our original.<br />* First we focus only on the maximum so we only take the second element [1] from our analyze_stats function.<br />* Second we fix the size of our loops based on the shape of datamax. * Third we label and annotate our plot</p>
+<p>We have made some more refinements to our original algorithm:</p>
+<ul>
+<li>First, we focus only on the maximum values, so we only take the second element returned by our <code>analyze_stats()</code> function (via the <code>[1]</code> index).</li>
+<li>Second, we set the size of our loops based on the shape of <code>datamax</code>.</li>
+<li>Third, we improve the labeling and annotation of our plot.</li>
+</ul>
 </div>
 
 
