@@ -30,7 +30,7 @@ root: ../..
 <pre>import glob
 
 import numpy as np
-from matplotlib import pyplot as plt
+import matplotlib.pyplot as plt
 
 %matplotlib inline</pre>
 </div>
@@ -218,18 +218,19 @@ def plot_clues(datamax):
 
     for count in range(size[0]):
         for time in range(size[1]):
-            if datamax[count,time] - overallmax[time] == -1:
+            if datamax[count, time] - overallmax[time] == -1:
                 plt.plot(time, datamax[count, time], &#39;s&#39;)
-            elif datamax[count,time] &lt; overallmax[time]:
+            elif datamax[count, time] &lt; overallmax[time]:
                 plt.plot(time, datamax[count, time], &#39;x&#39;)
             else:
-                plt.plot(time,datamax[count, time],&#39;.&#39;)
+                plt.plot(time, datamax[count, time], &#39;.&#39;)
     plt.title(
         &#34;Overall Maximum and Deviations Away from It\n&#34;
         &#34;dots = same as overall mean\n&#34;
         &#34;squares = exactly 1 unit less&#34;)
     plt.xlabel(&#34;Time (days)&#34;)
-    plt.ylabel(&#34;Inflammation (units)&#34;)</pre>
+    plt.ylabel(&#34;Inflammation (units)&#34;)
+    plt.show()</pre>
 </div>
 
 
