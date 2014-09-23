@@ -27,7 +27,7 @@ import pandas as pd</pre>
 
 
 <div>
-<p>Earlier we used numpy.loadtxt to read our csv. Now we will use the <a href="http://pandas.pydata.org/">pandas</a> data analysis library, that handles data better; in particular, headers in our files.</p>
+<p>Earlier we used <code>numpy.loadtxt()</code> to read our csv file. Now we will use the <a href="http://pandas.pydata.org/">pandas</a> data analysis library, that handles data better; in particular, headers in our files.</p>
 <p>However even with panda if we try the simplest possible thing:</p>
 <pre class="sourceCode python"><code class="sourceCode python">data = pd.read_csv(<span class="st">&#39;eng-hourly-08012013-08312013.csv&#39;</span>)</code></pre>
 <p>we get a dismaying number of errors.</p>
@@ -114,13 +114,13 @@ print data[0:4]</pre>
 </div>
 
 <div class="out">
-<pre>          Date/Time  Year  Month  Day   Time Data Quality  Temp (°C)  \
+<pre>          Date/Time  Year  Month  Day   Time Data Quality  Temp (�C)  \
 0  2013-08-01 00:00  2013      8    1  00:00           **       18.7   
 1  2013-08-01 01:00  2013      8    1  01:00           **       18.4   
 2  2013-08-01 02:00  2013      8    1  02:00           **       17.8   
 3  2013-08-01 03:00  2013      8    1  03:00           **       17.2   
 
-   Temp Flag  Dew Point Temp (°C)  Dew Point Temp Flag         ...           \
+   Temp Flag  Dew Point Temp (�C)  Dew Point Temp Flag         ...           \
 0        NaN                 14.6                  NaN         ...            
 1        NaN                 15.1                  NaN         ...            
 2        NaN                 16.0                  NaN         ...            
@@ -178,7 +178,7 @@ print data[0:4]</pre>
 <div>
 <p>That looks like progress and looks like what we expect.</p>
 <p>One remaining issue</p>
-<p>The degree symbol in the data file has been mangled. This is because pandas is not using the correct encoding. From trial and error we find that EC is using Windows encoding : ISO-8859-1</p>
+<p>The degree symbol in the data file has been mangled. This is because we have not told pandas what encoding to use for non-ASCII characters. From trial and error we find that EC is using Windows encoding : <code>ISO-8859-1</code>.</p>
 </div>
 
 
@@ -217,7 +217,7 @@ std dev: 2.67368872431
 
 
 <div>
-<p>Note that we need to include the u infront of Temp to warn python that this string includes unicode. I got the degree symbol by copying and pasting.</p>
+<p>Note that we need to include the <code>u</code> infront of the <code>Temp (°C)</code> to warn Python that this string includes a Unicode character. I got the degree symbol by copying and pasting, but you could also spell the key as <code>u'Temp (\u00b0C)'</code> (because <code>u'\u00b0'</code> is the Python string representation of the <a href="http://www.fileformat.info/info/unicode/char/b0/index.htm">Unicode DEGREESIGN character</a>)</p>
 <p>Now let's use Boolean slicing to dig down to the day level in our data. Let's get the maximum temperature each day, and the time when it occurred.</p>
 </div>
 
@@ -283,7 +283,7 @@ max temperature on 2013-08-31  was 19.6 at 16:00
 <p>http://climate.weather.gc.ca/climateData/bulkdata_e.html?timeframe=1&amp;stationID=51442&amp;Year=2013&amp;Month=8&amp;Day=1&amp;format=csv</p>
 <p>will return the hourly data CSV file for YVR that we all downloaded earlier.</p>
 <p>Note: The program that accepts that URL and processes it to return the data is very picky about capitalization. That's not good design, but it's what we have to live with.</p>
-<p>We can write that URL more readably in Python by separating it into a string for the URL of the page, and a dictionary containing the keys and values in the query part. Then we can use requests.get() function to get the content at that URL:</p>
+<p>We can write that URL more readably in Python by separating it into a string for the URL of the page, and a dictionary containing the keys and values in the query part. Then we can use <code>requests.get()</code> function to get the content at that URL:</p>
 </div>
 
 
@@ -312,9 +312,7 @@ response = requests.get(url, params=params)</pre>
 </div>
 
 <div class="out">
-<pre>{&#39;content-disposition&#39;: &#39;attachment; filename=&#34;eng-hourly-07012013-07312013.csv&#34;&#39;, &#39;content-transfer-encoding&#39;: &#39;binary&#39;, &#39;set-cookie&#39;: &#39;jsenabled=0; expires=Mon, 15-Sep-2014 02:50:46 GMT; path=/&#39;, &#39;accept-ranges&#39;: &#39;bytes&#39;, &#39;expires&#39;: &#39;Mon, 26 Jul 1997 05:00:00 GMT&#39;, &#39;keep-alive&#39;: &#39;timeout=3, max=100&#39;, &#39;server&#39;: &#39;Apache&#39;, &#39;transfer-encoding&#39;: &#39;chunked&#39;, &#39;connection&#39;: &#39;Keep-Alive&#39;, &#39;pragma&#39;: &#39;public&#39;, &#39;cache-control&#39;: &#39;private&#39;, &#39;date&#39;: &#39;Mon, 15 Sep 2014 01:50:46 GMT&#39;, &#39;content-type&#39;: &#39;application/force-download&#39;}
-None
-</pre>
+<pre>{&#39;content-disposition&#39;: &#39;attachment; filename=&#34;eng-hourly-07012013-07312013.csv&#34;&#39;, &#39;content-transfer-encoding&#39;: &#39;binary&#39;, &#39;set-cookie&#39;: &#39;jsenabled=0; expires=Tue, 23-Sep-2014 22:06:04 GMT; path=/&#39;, &#39;accept-ranges&#39;: &#39;bytes&#39;, &#39;expires&#39;: &#39;Mon, 26 Jul 1997 05:00:00 GMT&#39;, &#39;keep-alive&#39;: &#39;timeout=3, max=100&#39;, &#39;server&#39;: &#39;Apache&#39;, &#39;transfer-encoding&#39;: &#39;chunked&#39;, &#39;connection&#39;: &#39;Keep-Alive&#39;, &#39;pragma&#39;: &#39;public&#39;, &#39;cache-control&#39;: &#39;private&#39;, &#39;date&#39;: &#39;Tue, 23 Sep 2014 21:06:04 GMT&#39;, &#39;content-type&#39;: &#39;application/force-download&#39;}</pre>
 </div>
 
 
@@ -324,14 +322,14 @@ None
 <p>which is why our browsers download the file with the name that they do, or offer to open it for us in an appropriate application. We can also see that:</p>
 <p>'content-type': 'text/csv'</p>
 <p>confirms that the server is sending us CSV data.</p>
-<p>Now we have a bit of a library mis-match. Response produces a response object that has a bunch of neat properties BUT pandas wants to read a file. So we use the python library StringIO to produce a fakefile from the response content.</p>
+<p>Now we have a bit of a library mis-match. Requests produces a <code>response</code> object that has a bunch of neat properties BUT pandas wants to read a file. So we use the python library <code>StringIO</code> to produce a file-like object from the <code>response</code> content.</p>
 </div>
 
 
 <div class="in">
 <pre>from StringIO import StringIO
 fakefile = StringIO(response.content)
-datajul = pd.read_csv(fakefile, skiprows=16, encoding = &#34;ISO-8859-1&#34;)
+datajul = pd.read_csv(fakefile, skiprows=16, encoding=&#34;ISO-8859-1&#34;)
 
 print datajul.head(2)</pre>
 </div>
@@ -371,9 +369,4 @@ print datajul.head(2)</pre>
 <li>Use Boolean slices to explore and analyze data</li>
 <li>Use requests to download a file</li>
 </ul>
-</div>
-
-
-<div class="in">
-<pre></pre>
 </div>
