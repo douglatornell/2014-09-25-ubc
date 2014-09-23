@@ -69,36 +69,37 @@ CHECKS = [
 # Browsers
     'virtual-browser',
 # Version control
-    'git',
+    # 'git',
     'hg',              # Command line tool
-    #'mercurial',       # Python package
-    'EasyMercurial',
+    # 'mercurial',       # Python package
+    # 'EasyMercurial',
 # Build tools and packaging
-    'make',
+    # 'make',
     'virtual-pypi-installer',
     'setuptools',
-    #'xcode',
+    # 'xcode',
 # Testing
-    'nosetests',       # Command line tool
-    'nose',            # Python package
-    'py.test',         # Command line tool
-    'pytest',          # Python package
+    # 'nosetests',       # Command line tool
+    # 'nose',            # Python package
+    # 'py.test',         # Command line tool
+    # 'pytest',          # Python package
 # SQL
-    'sqlite3',         # Command line tool
-    'sqlite3-python',  # Python package
+    # 'sqlite3',         # Command line tool
+    # 'sqlite3-python',  # Python package
 # Python
     'python',
     'ipython',         # Command line tool
     'IPython',         # Python package
-    'argparse',        # Useful for utility scripts
+    # 'argparse',        # Useful for utility scripts
     'numpy',
     'scipy',
     'matplotlib',
     'pandas',
-    'sympy',
-    'Cython',
-    'networkx',
-    'mayavi.mlab',
+    # 'sympy',
+    # 'Cython',
+    # 'networkx',
+    # 'mayavi.mlab',
+    'requests',
     ]
 
 CHECKER = {}
@@ -161,6 +162,7 @@ class DependencyError (Exception):
         ('*', '*', 'python'): 'http://www.python.org/download/releases/2.7.3/#download',
         ('*', '*', 'pyzmq'): 'https://github.com/zeromq/pyzmq/wiki/Building-and-Installing-PyZMQ',
         ('*', '*', 'py.test'): 'http://pytest.org/latest/getting-started.html',
+        ('*', '*', 'requests'): 'http://docs.python-requests.org/en/latest/user/install',
         ('Linux', '*', 'scipy'): 'http://www.scipy.org/Installing_SciPy/Linux',
         ('Darwin', '*', 'scipy'): 'http://www.scipy.org/Installing_SciPy/Mac_OS_X',
         ('Windows', '*', 'scipy'): 'http://www.scipy.org/Installing_SciPy/Windows',
@@ -700,6 +702,7 @@ for package,name,long_name,minimum_version,and_dependencies in [
         ('networkx', None, 'NetworkX', None, None),
         ('mayavi.mlab', None, 'MayaVi', None, None),
         ('setuptools', None, 'Setuptools', None, None),
+        ('requests', None, 'Requests', None, None),
         ]:
     if not name:
         name = package
