@@ -305,7 +305,30 @@ for f in filenames:
   \item {\tt ==, !=, <, <=, >, >=}
   \item {\tt and, or, not}
   \item non-printing characters; e.g. \textbackslash{\tt n}
-  \item line continuations in code
+  \item Line continuations in code
+\end{itemize}
+\end{multicols}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Python Modules and Command-line Programs}
+\begin{enumerate}
+  \item Create a Python module containing functions that can be `import`-ed into notebooks and other modules.
+  \item Use the values of command-line arguments in a program.
+  \item Read data from standard input in a program so that it can be used in a pipeline.
+\end{enumerate}
+\begin{multicols}{2}
+\begin{itemize}
+  \item {\tt \%\%writefile}
+  \item {\tt !cat}
+  \item Module \& function docstrings
+  \item {\tt reload()}
+  \item {\tt sys.argv}
+  \item {\tt \$ python myfile.py}
+  \item {\tt if \_\_name\_\_ == "\_\_main\_\_":}
+  \item {\tt sys.stdin}
+  \item {\tt argparse}
 \end{itemize}
 \end{multicols}
 \end{frame}
