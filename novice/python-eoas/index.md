@@ -26,3 +26,4 @@ and hard tasks possible.
 
 * [pandas - Python Data Analysis Library](http://pandas.pydata.org/)
 * [Requests - HTTP Library](http://docs.python-requests.org/en/latest/)
+* [SciPy IO Tutorial re: `.mat` Files](http://docs.scipy.org/doc/scipy/reference/tutorial/io.html)
