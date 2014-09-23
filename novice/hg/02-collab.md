@@ -63,10 +63,6 @@ the string we need to identify it after clicking on "I have an existing project 
 
 <img src="img/bitbucket-find-repo-string.png" width="800px" alt="Where to Find Repository URL on BitBucket" />
 
-Change the 'ssh://' string to 'https://' in the url [protocol](../../gloss.html#protocol).
-It's slightly less convenient for day-to-day use,
-but much less work for beginners to set up.
-
 Copy that URL from the browser,
 go into the local `planets` repository,
 and use your text editor to add the following lines to `.hg/hgrc`:
@@ -79,7 +75,18 @@ default = https://bitbucket.org/vlad/planets
 Make sure to use the URL for your repository rather than Vlad's;
 the only difference should be your username instead of `vlad`.
 
-We can check that the command has worked by running `hg paths`:
+Also make sure to change the 'ssh://' string to 'https://' in the url [protocol](../../gloss.html#protocol).
+We use HTTPS here because it does not require additional configuration.
+Unfortunately,
+this option also requires you to type your username and password every time you interact with Bitbucket.
+After the bootcamp,
+we recommend that you set up SSH keys,
+which is more secure,
+and will remove the username and password requirement,
+by following the great tutorial from
+[Atlassian/BitBucket](https://confluence.atlassian.com/display/BITBUCKET/Set+up+SSH+for+Mercurial).
+
+We can check the default path to the remote repository by running `hg paths`:
 
 ~~~
 $ hg paths
