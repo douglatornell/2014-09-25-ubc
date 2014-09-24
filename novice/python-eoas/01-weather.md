@@ -11,6 +11,23 @@ root: ../..
 <ul>
 <li>Read CSV data from files into NumPy data structures, using <a href="http://pandas.pydata.org/">pandas</a></li>
 <li>Use list boolean slices to select data</li>
+<li>Use requests to get data from the web</li>
+</ul>
+</div>
+
+
+<div>
+<h2 id="getting-the-data">Getting the Data</h2>
+<ul>
+<li>Use your browser to go to <a href="http://climate.weather.gc.ca/">Environment Canada Climate Data</a> and work your way through to the &quot;Hourly Data Report&quot; for yesterday at the <em>Vancouver Intl A</em> station.</li>
+<li>Download the August 2013 hourly data as a CSV file</li>
+<li>Use your shelf skills to confirm that:
+<ul>
+<li>You really got a CSV file</li>
+<li>It's for the <em>Vancouver Intl A</em> station</li>
+<li>It contains hourly data for the whole month of August 2013</li>
+</ul></li>
+<li>Move or copy the CSV file into the <em>data-explore/</em> directory in your repo and commit it.</li>
 </ul>
 </div>
 
@@ -312,7 +329,7 @@ response = requests.get(url, params=params)</pre>
 </div>
 
 <div class="out">
-<pre>{&#39;content-disposition&#39;: &#39;attachment; filename=&#34;eng-hourly-07012013-07312013.csv&#34;&#39;, &#39;content-transfer-encoding&#39;: &#39;binary&#39;, &#39;set-cookie&#39;: &#39;jsenabled=0; expires=Tue, 23-Sep-2014 22:06:04 GMT; path=/&#39;, &#39;accept-ranges&#39;: &#39;bytes&#39;, &#39;expires&#39;: &#39;Mon, 26 Jul 1997 05:00:00 GMT&#39;, &#39;keep-alive&#39;: &#39;timeout=3, max=100&#39;, &#39;server&#39;: &#39;Apache&#39;, &#39;transfer-encoding&#39;: &#39;chunked&#39;, &#39;connection&#39;: &#39;Keep-Alive&#39;, &#39;pragma&#39;: &#39;public&#39;, &#39;cache-control&#39;: &#39;private&#39;, &#39;date&#39;: &#39;Tue, 23 Sep 2014 21:06:04 GMT&#39;, &#39;content-type&#39;: &#39;application/force-download&#39;}</pre>
+<pre>{&#39;content-disposition&#39;: &#39;attachment; filename=&#34;eng-hourly-07012013-07312013.csv&#34;&#39;, &#39;content-transfer-encoding&#39;: &#39;binary&#39;, &#39;set-cookie&#39;: &#39;jsenabled=0; expires=Wed, 24-Sep-2014 19:42:43 GMT; path=/&#39;, &#39;accept-ranges&#39;: &#39;bytes&#39;, &#39;expires&#39;: &#39;Mon, 26 Jul 1997 05:00:00 GMT&#39;, &#39;keep-alive&#39;: &#39;timeout=3, max=100&#39;, &#39;server&#39;: &#39;Apache&#39;, &#39;transfer-encoding&#39;: &#39;chunked&#39;, &#39;connection&#39;: &#39;Keep-Alive&#39;, &#39;pragma&#39;: &#39;public&#39;, &#39;cache-control&#39;: &#39;private&#39;, &#39;date&#39;: &#39;Wed, 24 Sep 2014 18:42:43 GMT&#39;, &#39;content-type&#39;: &#39;application/force-download&#39;}</pre>
 </div>
 
 
