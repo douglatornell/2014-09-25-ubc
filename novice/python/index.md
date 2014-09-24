@@ -33,6 +33,8 @@ and to use that language *well*.
 
 [Python Reference Guide](../ref/03-python.html)
 
+[Bootcamp Slides](../../teaching_notes/python_notes.pdf)
+
 
 ###iPython Notebooks###
 <div class="toc" markdown="1">

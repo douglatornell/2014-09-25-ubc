@@ -24,3 +24,5 @@ so that they don't have to type the same things over and over again.
 </div>
 
 [Unix Shell Reference Guide](../ref/01-shell.html)
+
+[Bootcamp Slides](../../teaching_notes/Shell_notes.pdf)

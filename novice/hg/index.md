@@ -27,6 +27,8 @@ can and should be stored in a version control system.
 
 [Mercurial Reference Guide](../ref/02-hg.html)
 
+[Bootcamp Slides](../../teaching_notes/hg_notes.pdf)
+
 
 ### Resources
 
