@@ -22,6 +22,8 @@ and hard tasks possible.
 1.  [Reading & Exploring CSV Weather Data](http://nbviewer.ipython.org/github/douglatornell/2014-09-25-ubc/blob/gh-pages/novice/python-eoas/01-weather.ipynb)
 </div>
 
+[Bootcamp Slides](../../teaching_notes/python-eoas_notes.pdf)
+
 ### Resources
 
 * [pandas - Python Data Analysis Library](http://pandas.pydata.org/)
