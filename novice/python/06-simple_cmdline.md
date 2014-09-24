@@ -109,10 +109,8 @@ optional arguments:
 <div class="out">
 <pre>def sherlock(filenames, datalen=40):
     datamax = np.empty((len(filenames), datalen))
-    count = 0
-    for f in filenames:
+    for count, f in enumerate(filenames):
         datamax[count] = analyze_stats(f)[1]
-        count += 1
     plot_clues(datamax)
 
     
@@ -134,7 +132,8 @@ def plot_clues(datamax):
         &#34;dots = same as overall mean\n&#34;
         &#34;squares = exactly 1 unit less&#34;)
     plt.xlabel(&#34;Time (days)&#34;)
-    plt.ylabel(&#34;Inflammation (units)&#34;)def analyze_stats(filename):
+    plt.ylabel(&#34;Inflammation (units)&#34;)
+    plt.show()def analyze_stats(filename):
     data = np.loadtxt(fname=filename, delimiter=&#39;,&#39;)
     return data.mean(0), data.max(0), data.min(0)</pre>
 </div>
@@ -171,10 +170,8 @@ import matplotlib.pyplot as plt
 
 def sherlock(filenames, datalen=40):
     datamax = np.empty((len(filenames), datalen))
-    count = 0
-    for f in filenames:
+    for count, f in enumerate(filenames):
         datamax[count] = analyze_stats(f)[1]
-        count += 1
     plot_clues(datamax)
 
 
@@ -197,6 +194,7 @@ def plot_clues(datamax):
         &#34;squares = exactly 1 unit less&#34;)
     plt.xlabel(&#34;Time (days)&#34;)
     plt.ylabel(&#34;Inflammation (units)&#34;)
+    plt.show()
 
 
 def analyze_stats(filename):
@@ -395,8 +393,7 @@ def main():
     &#34;&#34;&#34;
     script = sys.argv[0]
     files = sys.argv[1:]
-    for fn in files:
-        print fn
+    sherlock(files)
 
 
 def sherlock(filenames, datalen=40):
@@ -404,8 +401,7 @@ def sherlock(filenames, datalen=40):
     inflamation values.
     &#34;&#34;&#34;
     datamax = np.empty((len(filenames), datalen))
-    count = 0
-    for f in filenames:
+    for count, f in enumerate(filenames):
         datamax[count] = analyze_stats(f)[1]
         count += 1
     plot_clues(datamax)
