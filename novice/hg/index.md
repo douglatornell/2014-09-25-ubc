@@ -27,4 +27,8 @@ can and should be stored in a version control system.
 
 [Mercurial Reference Guide](../ref/02-hg.html)
 
-[SSH Keys for Mercurial and Bitbucket Tutorial](https://confluence.atlassian.com/display/BITBUCKET/Set+up+SSH+for+Mercurial)
+
+### Resources
+
+* [Mercurial: The Definitive Guide](http://hgbook.red-bean.com/)
+* [SSH Keys for Mercurial and Bitbucket Tutorial](https://confluence.atlassian.com/display/BITBUCKET/Set+up+SSH+for+Mercurial)
