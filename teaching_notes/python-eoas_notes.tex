@@ -1,0 +1,124 @@
+\documentclass[xcolor=dvipsnames]{beamer}
+
+\usetheme{Susan}
+\usepackage{graphics}
+\usepackage{multicol}
+\usepackage{url}
+
+\section*{Python for EOAS}
+
+\begin{document}
+
+\begin{frame}
+\begin{center}{\Huge Python for EOAS}
+\end{center}
+Examples of using modules
+\end{frame}
+
+\begin{frame}
+\frametitle{Learning Goals}
+\begin{enumerate}
+\item  Read CSV data from files into NumPy data structures,
+using pandas
+\item Use list boolean slices to select data
+\item Use requests to get data from the web
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{Get the Data}
+\begin{itemize}
+\item Use your browser to go to \url{http://climate.weather.gc.ca/} and work your way through to the "Hourly Data Report" for yesterday at the *Vancouver Intl A* station.
+\item Download the August 2013 hourly data as a CSV file
+\item Use your shell skills to confirm that:
+\begin{itemize}
+    \item You really got a CSV file
+    \item It's for the *Vancouver Intl A* station
+    \item It contains hourly data for the whole month of August 2013
+\end{itemize}
+\item Move or copy the CSV file into the *data-explore/* directory in your repo and commit it.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\begin{enumerate}
+\item  Read CSV data from files into NumPy data structures,
+using pandas
+\end{enumerate}
+\begin{itemize}
+\item import numpy as np
+\item import pandas as pd
+\item !head eng-hourly-08012013-08312013.csv
+\item !head -20 eng-hourly-08012013-08312013.csv
+\item !tail eng-hourly-08012013-08312013.csv
+\item data = pd.read\_csv('eng-hourly-08012013-08312013.csv', skiprows=16)
+\item print data[0:4]
+\item print data.tail(1)
+\item !tail -1 eng-hourly-08012013-08312013.csv
+\item data = pd.read\_csv('eng-hourly-08012013-08312013.csv', skiprows=16, encoding="ISO-8859-1")
+\item print data.columns
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\begin{enumerate}
+\setcounter{enumi}{1}
+\item Use list boolean slices to select data
+\end{enumerate}
+\begin{itemize}
+\item temps = data[u'Temp (°C)']
+\item print 'max:', temps.max(), 'on', data['Date/Time'][temps.argmax()]
+\item print 'min:', temps.min(), 'on', data['Date/Time'][temps.argmin()]
+\item print 'mean:', temps.mean()
+\item print 'std dev:', temps.std()
+\item {\small
+\begin{verbatim}
+for day in range(1, 32):
+    mask = data['Day']==day
+    max_temp = temps[mask].max()
+    date = data[mask]['Date/Time'][temps[mask].argmax()][:11]
+    hour = data[mask]['Time'][temps[mask].argmax()]    
+    print 'max temperature on',date, 'was', max_temp, 'at', hr
+\end{verbatim}}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Exercise}
+Plot the daily maximum temperature.
+\end{frame}
+
+\begin{frame}[fragile]
+\begin{enumerate}
+\setcounter{enumi}{2}
+\item Use requests to get data from the web
+\end{enumerate}
+\begin{itemize}
+\item import requests
+\item url = 'http://climate.weather.gc.ca/climateData/bulkdata\_e.html'
+\item 
+\begin{verbatim}
+params = {
+    'timeframe': 1,
+    'stationID': 51442,
+    'Year': 2013,
+    'Month': 7,
+    'Day': 1,
+    'format': 'csv',
+}
+\end{verbatim}
+\item response = requests.get(url, params=params)
+\item response.headers
+\item from StringIO import StringIO
+\item fakefile = StringIO(response.content)
+\item datajul = pd.read\_csv(fakefile, skiprows=16, encoding="ISO-8859-1")
+\item print datajul.head(2)
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Exercise}
+Plot the daily maximum temperature for both August and July
+\end{frame}
+
+\end{document}
