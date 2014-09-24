@@ -73,6 +73,7 @@ CHECKS = [
     'hg',              # Command line tool
     # 'mercurial',       # Python package
     # 'EasyMercurial',
+    'kdiff3',           # GUI diff/merge tool
 # Build tools and packaging
     # 'make',
     'virtual-pypi-installer',
@@ -145,6 +146,7 @@ class DependencyError (Exception):
         ('*', '*', 'ipython'): 'http://ipython.org/install.html',
         ('*', '*', 'jinja'): 'http://jinja.pocoo.org/docs/intro/#installation',
         ('*', '*', 'kate'): 'http://kate-editor.org/get-it/',
+        ('*', '*', 'kdiff3'): 'http://kdiff3.sourceforge.net/',
         ('*', '*', 'make'): 'http://www.gnu.org/software/make/',
         ('Darwin', '*', 'matplotlib'): 'http://matplotlib.org/users/installing.html#building-on-osx',
         ('Windows', '*', 'matplotlib'): 'http://matplotlib.org/users/installing.html#installing-on-windows',
@@ -511,6 +513,7 @@ for command,long_name,minimum_version,paths in [
         ('git', 'Git', (1, 7, 0), None),
         ('hg', 'Mercurial', (2, 0, 0), None),
         ('EasyMercurial', None, (1, 3), None),
+        ('kdiff3', None, None, None),
         ('pip', None, None, None),
         ('sqlite3', 'SQLite 3', None, None),
         ('nosetests', 'Nose', (1, 0, 0), None),
