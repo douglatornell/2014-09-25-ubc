@@ -50,3 +50,11 @@ and to use that language *well*.
 <div class="toc" markdown="1">
 1.  [Defensive Programming, Test-Driven Development, and Debugging](05-defensive.html) ([iPython Notebook](http://nbviewer.ipython.org/github/douglatornell/2014-09-25-ubc/blob/gh-pages/novice/python/05-defensive.ipynb))
 </div>
+
+
+###Resources
+
+* [Python Documentation](https://docs.python.org/2.7/)
+* [NumPy Documentation](http://docs.scipy.org/doc/numpy/reference/index.html)
+* [Matplotlib Documentation](http://matplotlib.org/contents.html)
+* [Argparse Tutorial](http://docs.python.org/dev/howto/argparse.html)
