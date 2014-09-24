@@ -81,6 +81,17 @@ for f in filenames:
 
 
 <div>
+<p>However, this is a bit awkward. Can't we just get python to &quot;count&quot; as it loops through the files. Yes, we can using enumerate.</p>
+</div>
+
+
+<div class="in">
+<pre>for count, f in enumerate(filenames):
+    datamean[count], datamax[count], datamin[count] = analyze_stats(f)</pre>
+</div>
+
+
+<div>
 <p>Plotting a heat map, like in the first lesson, of the maximum values shows one statistic we is think totally unrealistic for real data.</p>
 </div>
 
@@ -95,7 +106,7 @@ plt.show()</pre>
 
 <div class="out">
 <pre>
-<img src="../../novice/python/04-simple_cond_files/novice/python/04-simple_cond_12_0.png">
+<img src="../../novice/python/04-simple_cond_files/novice/python/04-simple_cond_14_0.png">
 </pre>
 </div>
 
@@ -115,7 +126,7 @@ plt.show()</pre>
 
 <div class="out">
 <pre>
-<img src="../../novice/python/04-simple_cond_files/novice/python/04-simple_cond_14_0.png">
+<img src="../../novice/python/04-simple_cond_files/novice/python/04-simple_cond_16_0.png">
 </pre>
 </div>
 
@@ -151,7 +162,7 @@ plt.show()</pre>
 
 <div class="out">
 <pre>
-<img src="../../novice/python/04-simple_cond_files/novice/python/04-simple_cond_16_0.png">
+<img src="../../novice/python/04-simple_cond_files/novice/python/04-simple_cond_18_0.png">
 </pre>
 </div>
 
@@ -204,10 +215,8 @@ else:
 <div class="in">
 <pre>def sherlock(filenames, datalen=40):
     datamax = np.empty((len(filenames), datalen))
-    count = 0
-    for f in filenames:
+    for count, f in enumerate(filenames):
         datamax[count] = analyze_stats(f)[1]
-        count += 1
     plot_clues(datamax)
 
     
@@ -250,6 +259,6 @@ def plot_clues(datamax):
 
 <div class="out">
 <pre>
-<img src="../../novice/python/04-simple_cond_files/novice/python/04-simple_cond_25_0.png">
+<img src="../../novice/python/04-simple_cond_files/novice/python/04-simple_cond_27_0.png">
 </pre>
 </div>
