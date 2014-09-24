@@ -1,4 +1,5 @@
 NOTES_PDFS= \
+	introduction_notes.pdf \
 	Shell_notes.pdf \
 	hg_notes.pdf \
 	python_notes.pdf
