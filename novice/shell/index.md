@@ -26,3 +26,10 @@ so that they don't have to type the same things over and over again.
 [Unix Shell Reference Guide](../ref/01-shell.html)
 
 [Bootcamp Slides](../../teaching_notes/Shell_notes.pdf)
+
+The shell scripts we created during while live-coding during the bootcamp have been added to the [swc-nelle-files](https://bitbucket.org/douglatornell/swc-nelle-files) repo on Bitbucket:
+
+* [`longest.sh`](https://bitbucket.org/douglatornell/swc-nelle-files/src/tip/longest.sh)
+* [`more-molecules/middle.sh`](https://bitbucket.org/douglatornell/swc-nelle-files/src/tip/more-molecules/middle.sh)
+* [`more-molecules/sorted.sh`](https://bitbucket.org/douglatornell/swc-nelle-files/src/tip/more-molecules/sorted.sh)
+* [`north-pacific-gyre/2012-07-03/do-stats.sh`](https://bitbucket.org/douglatornell/swc-nelle-files/src/tip/north-pacific-gyre/2012-07-03/do-stats.sh)
