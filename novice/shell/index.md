@@ -27,6 +27,9 @@ so that they don't have to type the same things over and over again.
 
 [Bootcamp Slides](../../teaching_notes/Shell_notes.pdf)
 
+The partially annotated log of the instructors' shell commands is at
+[http://eoas.ubc.ca/~dlatorne/swc/2014-09-25-ubc/history.txt](http://eoas.ubc.ca/~dlatorne/swc/2014-09-25-ubc/history.txt)
+
 The shell scripts we created during while live-coding during the bootcamp have been added to the [swc-nelle-files](https://bitbucket.org/douglatornell/swc-nelle-files) repo on Bitbucket:
 
 * [`longest.sh`](https://bitbucket.org/douglatornell/swc-nelle-files/src/tip/longest.sh)
