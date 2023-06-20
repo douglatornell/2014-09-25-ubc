@@ -10,3 +10,6 @@ Host: Dr. Susan Allen, sallen@eos.ubc.ca
 Instructors: Doug Latornell, Susan Allen
 
 Helpers: Jordan Aaron, Karina Ramos Musalem, Drew Snauffer, Nancy Soontiens, Kathi Unglert, Kang Wang
+
+This repository is an archival record of the workshop.
+It is read-only on GitHub as of 20-Jun-2023.
